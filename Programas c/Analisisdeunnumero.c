@@ -9,6 +9,7 @@ int main(){
 	int Num,i,x;
 	float cont,perfecto;
 	setlocale(LC_ALL,"spanish");
+	printf("Comentario prueba"\n);
 	printf("\nEste programa analiza un numero digitado por el teclado.");
 	printf("\nEse número debe ser entero, de lo contrario el programa lo redondea.");
 	printf("\n\nDigita un número: ");scanf("%i", &Num);
