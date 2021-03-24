@@ -1,8 +1,8 @@
-# 1 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre\\Tarea1.c++"
+# 1 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre\\Tarea1.cpp"
 # 1 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre//"
 # 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre\\Tarea1.c++"
+# 1 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre\\Tarea1.cpp"
 # 1 "c:\\mingw\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\iostream" 1 3
 # 36 "c:\\mingw\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\iostream" 3
        
@@ -24014,9 +24014,9 @@ namespace std
 
 
 }
-# 2 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre\\Tarea1.c++" 2
+# 2 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre\\Tarea1.cpp" 2
 
-# 2 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre\\Tarea1.c++"
+# 2 "C:\\Users\\pacma\\Documents\\GIT\\2_semestre\\Tarea1.cpp"
 int main(){
     printf("Nombre: Cristian Martín Vázquez González.\n18 años\nTeléfono:5547353499.\nCorreo electrónico: marvaz10@protonmail.com");
     return 0;
