@@ -20,7 +20,7 @@ int main () {
     printf("unsigned long (0---4,249,967,295): ");scanf("%i",&d);fflush(stdin);
     printf("int (2,147,483,684---2,147,483,647): ");scanf("%i",&e);fflush(stdin);
     printf("float (3.4^-38---3.4^38): ");scanf("%f",&f);fflush(stdin);
-    printf("double (1.7^-308---1.7^308");scanf("%f",&g);fflush(stdin);
+    printf("double (1.7^-308---1.7^308: ");scanf("%f",&g);fflush(stdin);
     printf("char (-128---127): ");scanf("%c",&h);fflush(stdin);
     system ("cls");
     printf("short %i\nunsigned short %i\nlong %i\nunsigned long %i\nint %i",a,b,c,d,e);

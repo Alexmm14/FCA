@@ -13,11 +13,11 @@ int main(){
     printf("Precio de compra: $");scanf("%i",&precio1);fflush(stdin);
     printf("Precio de venta: $");scanf("%i",&precio2);fflush(stdin);
     cout<<"Caducidad (dd/mm/aaaa): ";gets(caducidad);
-    cout<<"Proveedor: ";gets(proveedor);
+    printf("Digite el nombre del proveedor: ");scanf("%s",proveedor);
     system("cls");
     printf("El producto es %s",producto);
     printf("\nSe compró por $%i\nSe vendió por $%i\n",precio1,precio2);
     printf("Caduca el ");cout<<caducidad<<endl;
-    printf("El proveedor es ");cout<<proveedor<<endl;
+    printf("El proveedor es %s",proveedor);
     return 0;
 }
