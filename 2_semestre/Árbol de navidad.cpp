@@ -1,6 +1,5 @@
 #include<iostream> 
 #include<locale.h>
-using namespace std;
 int main (){
    int hojas,tronco,espacios=1,dibujo=1,cont1,cont2,x=1;
    setlocale(LC_ALL, "spanish");
