@@ -7,7 +7,4 @@ print(variable)#Después guarda un número
 variable=True 
 print("Y eso es",variable)#Al final gaurda un booleano
 
-'''
-Esto es posible realizarlo 
-en cualquier momento del programa
-'''
+#Esto es posible realizarlo en cualquier momento del programa
