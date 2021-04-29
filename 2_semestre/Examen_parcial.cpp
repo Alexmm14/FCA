@@ -32,6 +32,7 @@ struct info_direccion{//Estructura de datos de dirección
 	char cp[30];
 };
 
+
 struct empleado{//Estructura de datos generales
 	char nombre[30];
     char apellidopat[30];
@@ -252,6 +253,21 @@ void despliegues(){//PREGUNTAR EL ORDEN DE DESPLIEGUE
     getch();
 }
 
-void ordenes(){
+void ordenes(struct ordenamiento a[]){
+    int i,j,contador=1;
+    struct ordenamiento temp;
+    for(i=0;i<100;i++){
+        for(j=100;j>=i;j--){
+            if(a[j-1].apellido>a[j].apellido){
+                temp=a[j-1];
+                a[j-1]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    for(i=0;i<100;i++){
+        cout<<contador<<".- "<<a[i].apellido<<endl;
+        contador+=1;
+    }
     getch();
 }
