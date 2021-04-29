@@ -54,9 +54,9 @@ int main(){//Función principal
             case 3:cambios();break;
             case 4:consultas();break;
             case 5:despliegues();break;
-            //case 6:ordenes();break;
+            case 6:ordenes();break;
             case 0:gotoxy(1,18);cout<<"FIN DEL PROGRAMA";break;
-            default:gotoxy(1,18);cout<<"Opción incorrecta";break;
+            default:gotoxy(1,18);cout<<"Opción incorrecta";getch();break;
         }
     }while(opcion>0);
     return 0;
@@ -253,5 +253,5 @@ void despliegues(){//PREGUNTAR EL ORDEN DE DESPLIEGUE
 }
 
 void ordenes(){
-    
+    getch();
 }
