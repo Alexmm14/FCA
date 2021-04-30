@@ -201,22 +201,23 @@ void consultas(){//Función para consultar una posición
 }
 
 void despliegues(){//PREGUNTAR POR EL LÍMITE DE IMPRESIÓN
+    int contador=100;
     gotoxy(1,18);cout<<"Datos de pila:\n";
-    for(int i=0;i<99;i++){
-        cout<<"Nombre: "<<e[i].nombre<<endl;
-        cout<<"Apellido paterno: "<<e[i].apellidopat<<endl;
-        cout<<"Apellido materno: "<<e[i].apellidomat<<endl;
-        cout<<"Email: "<<e[i].email<<endl;
-        cout<<"Edad: "<<e[i].edad<<endl;
-		cout<<"Calle: "<<e[i].dir.calle<<endl;
-		cout<<"Colonia: "<<e[i].dir.colonia<<endl;
-		cout<<"Municipio: "<<e[i].dir.municipio<<endl;
-		cout<<"Número exterior: "<<e[i].dir.numex<<endl;
-		cout<<"Número interior: "<<e[i].dir.numin<<endl;
-		cout<<"Código postal: "<<e[i].dir.cp<<endl;
-        cout<<"Teléfono: "<<e[i].telefono<<endl;
+    for(int i=99;i>=0;i--){
+        cout<<contador<<".- Nombre: "<<e[i].nombre<<endl;
+        cout<<"    Apellido paterno: "<<e[i].apellidopat<<endl;
+        cout<<"    Apellido materno: "<<e[i].apellidomat<<endl;
+        cout<<"    Email: "<<e[i].email<<endl;
+        cout<<"    Edad: "<<e[i].edad<<endl;
+        cout<<"    Calle: "<<e[i].dir.calle<<endl;
+        cout<<"    Colonia: "<<e[i].dir.colonia<<endl;
+        cout<<"    Municipio: "<<e[i].dir.municipio<<endl;
+        cout<<"    Numero exterior: "<<e[i].dir.numex<<endl;
+        cout<<"    Numero interior: "<<e[i].dir.numin<<endl;
+        cout<<"    Código postal: "<<e[i].dir.cp<<endl;
+        cout<<"    Teléfono: "<<e[i].telefono<<endl;
+        contador-=1;
         cout<<"\n";
-		fflush(stdin);
     } 
     getch();
 }
@@ -249,6 +250,7 @@ void ordenes(){//PREGUNTAR SI ESTÁ BIEN EL ORDEN Y EL LÍMITE
         cout<<"    Código postal: "<<e[i].dir.cp<<endl;
         cout<<"    Teléfono: "<<e[i].telefono<<endl;
         contador-=1;
+        cout<<"\n";
     }
     getch();
 }
