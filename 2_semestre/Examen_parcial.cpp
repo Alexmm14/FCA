@@ -200,7 +200,7 @@ void consultas(){//Función para consultar una posición
     }
 }
 
-void despliegues(){//PREGUNTAR POR EL LÍMITE DE IMPRESIÓN
+void despliegues(){//Función para desplegar toda la pila
     int contador=100;
     gotoxy(1,18);cout<<"Datos de pila:\n";
     for(int i=99;i>=0;i--){
@@ -222,7 +222,7 @@ void despliegues(){//PREGUNTAR POR EL LÍMITE DE IMPRESIÓN
     getch();
 }
 
-void ordenes(){//PREGUNTAR SI ESTÁ BIEN EL ORDEN Y EL LÍMITE
+void ordenes(){//Función para ordenar por apellidos
     int i,j,contador=100;
     persona tempo;
     cout<<"\n\n";
