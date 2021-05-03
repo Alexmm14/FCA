@@ -97,7 +97,7 @@ void altas(){//Función para crear datos
 }
 
 void bajas(){//Función para eliminar datos
-    int posicion;
+    int posicion,i;
     char decision;
     gotoxy(1,18);cout<<"¿Qué posición quiere dar de baja? ";cin>>posicion;
     if(posicion>99){
@@ -119,19 +119,23 @@ void bajas(){//Función para eliminar datos
         cout<<"Teléfono: "<<e[posicion].telefono<<endl;
         cout<<"¿Desea dar de baja estos datos? s/n: ";cin>>decision;
         if(decision=='s'){
-            if(posicion==99){
-                struct persona e[posicion]={0};
-                marca-=1;
-                cout<<"Datos dados de baja.";
-                getch();
-            }else{
-                for(int i=posicion;i<100;i++){
-                    e[i]=e[i+1];
-                }
-                marca-=1;
-                cout<<"Datos dados de baja";
-                getch();
+            for(posicion;posicion<100-posicion;posicion++){
+                e[posicion].nombre=e[posicion+1].nombre;
+                e[posicion].apellidopat=e[posicion+1].apellidopat;
+                e[posicion].apellidomat=e[posicion+1].apellidomat;
+                e[posicion].email=e[posicion+1].email;
+                e[posicion].edad=e[posicion+1].edad;
+                e[posicion].dir.calle=e[posicion+1].dir.calle;
+                e[posicion].dir.colonia=e[posicion+1].dir.colonia;
+                e[posicion].dir.municipio=e[posicion+1].dir.municipio;
+                e[posicion].dir.numex=e[posicion+1].dir.numex;
+                e[posicion].dir.numin=e[posicion+1].dir.numin;
+                e[posicion].dir.cp=e[posicion+1].dir.cp;
+                e[posicion].telefono=e[posicion+1].telefono;
             }
+            marca-=1;
+            cout<<"Datos dados de baja";
+            getch();
         }
     }
 }
