@@ -92,7 +92,7 @@ void altas(){//Función para crear datos
         cout<<"Digite el número interior de su vivienda: ";cin>>e[marca].dir.numin;fflush(stdin);
         cout<<"Digite el código postal: ";cin>>e[marca].dir.cp;fflush(stdin);
         cout<<"Digite el teléfono: ";cin>>e[marca].telefono;
-        marca++;
+        marca+=1;
     }
 }
 
