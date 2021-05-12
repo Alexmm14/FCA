@@ -6,7 +6,7 @@ using namespace std;
 
 int marca=0;//Variable global
 
-void gotoxy(int x,int y){//Función para usar gotoxy
+void gotoxy(int x,int y){//Declaración de funciones
       HANDLE hcon;  
       hcon = GetStdHandle(STD_OUTPUT_HANDLE);  
       COORD dwPos;  
@@ -14,8 +14,7 @@ void gotoxy(int x,int y){//Función para usar gotoxy
       dwPos.Y= y;  
       SetConsoleCursorPosition(hcon,dwPos);
 }
-
-void menu();//Declaración de funciones
+void menu();
 void altas();
 void bajas();
 void cambios();
@@ -32,7 +31,7 @@ struct persona{//Estructura de datos generales
 	string nombre,apellidopat,apellidomat,email,edad,telefono;
 	struct direccion dir;
 };
-persona e[100];
+persona e[101];
 
 int main(){//Función principal
     setlocale(LC_ALL,"spanish");
@@ -47,8 +46,8 @@ int main(){//Función principal
             case 4:consultas();break;
             case 5:despliegues();break;
             case 6:ordenes();break;
-            case 0:gotoxy(7,18);cout<<"FIN DEL PROGRAMA\n"<<endl;break;
-            default:gotoxy(7,18);cout<<"Opción incorrecta\n"<<endl;getch();break;
+            case 0:gotoxy(10,18);cout<<"FIN DEL PROGRAMA\n"<<endl;break;
+            default:gotoxy(10,18);cout<<"Opción inválida\n"<<endl;getch();break;
         }
     }while(opcion!=0);
     return 0;
@@ -76,7 +75,7 @@ void menu(){//Función para pintar el menú de opciones
 
 void altas(){//Función para crear datos
     if(marca>99){
-        gotoxy(1,18);cout<<"La pila está llena."<<endl;cout<<"Intente otra opción."<<endl;
+        gotoxy(1,18);cout<<"La pila está llena."<<endl;cout<<"Intente otra opción. ";
         getch();
     }else{
         gotoxy(1,18);cout<<"Digite los datos: "<<endl;fflush(stdin);
@@ -92,7 +91,7 @@ void altas(){//Función para crear datos
         cout<<"Digite el número interior de su vivienda: ";cin>>e[marca].dir.numin;fflush(stdin);
         cout<<"Digite el código postal: ";cin>>e[marca].dir.cp;fflush(stdin);
         cout<<"Digite el teléfono: ";cin>>e[marca].telefono;
-        marca+=1;
+        marca++;
     }
 }
 
@@ -184,7 +183,7 @@ void cambios(){//Función para cambiar datos
             cout<<"Datos cambiados.";
             getch();
         }else{
-            gotoxy(1,20);cout<<"    Menú de opciones"<<endl;
+            gotoxy(1,20);cout<<" Menú de opciones"<<endl;
             cout<<"1.- Nombre: "<<e[posicion].nombre<<endl;
             cout<<"2.- Apellido paterno: "<<e[posicion].apellidopat<<endl;
             cout<<"3.- Apellido materno: "<<e[posicion].apellidomat<<endl;
@@ -211,9 +210,9 @@ void cambios(){//Función para cambiar datos
                 case 9:cout<<"Digite el nuevo número exterior: ";cin>>e[posicion].dir.numex;cout<<"Dato cambiado.";marca++;break;
                 case 10:cout<<"Digite el nuevo número interior: ";cin>>e[posicion].dir.numin;cout<<"Dato cambiado.";marca++;break;
                 case 11:cout<<"Digite el nuevo código postal: ";cin>>e[posicion].dir.cp;cout<<"Dato cambiado.";marca++;break;
-                case 12:cout<<"Digite el teléfono: ";cin>>e[posicion].telefono;cout<<"Dato cambiado.";marca++;break;
-                case 13:cout<<"Presione ENTER para volver al menú principal ";break;
-                default:cout<<"ERROR\nDigite una opción válida ";break;
+                case 12:cout<<"Digite el nuevo teléfono: ";cin>>e[posicion].telefono;cout<<"Dato cambiado.";marca++;break;
+                case 13:cout<<"Presione ENTER para volver al menú principal. ";break;
+                default:cout<<"ERROR\nDigite una opción válida. ";break;
             }
             getch();
         }
@@ -248,8 +247,7 @@ void despliegues(){//Función para desplegar toda la pila
     int contador=marca;
     gotoxy(1,18);cout<<"Datos de la pila:"<<endl;
     if(marca==0){
-        cout<<"La pila está vacía.";
-        getch();
+        cout<<"La pila está vacía. ";getch();
     }else{
         for(int i=marca-1;i>=0;i--){
             cout<<contador<<".- Nombre: "<<e[i].nombre<<endl;
@@ -285,21 +283,25 @@ void ordenes(){//Función para ordenar por apellidos
         }
     }
 
-    for(i=marca-1;i>=0;i--){
-        cout<<contador<<".- Nombre: "<<e[i].nombre<<endl;
-        cout<<"    Apellido paterno: "<<e[i].apellidopat<<endl;
-        cout<<"    Apellido materno: "<<e[i].apellidomat<<endl;
-        cout<<"    Email: "<<e[i].email<<endl;
-        cout<<"    Edad: "<<e[i].edad<<endl;
-        cout<<"    Calle: "<<e[i].dir.calle<<endl;
-        cout<<"    Colonia: "<<e[i].dir.colonia<<endl;
-        cout<<"    Municipio: "<<e[i].dir.municipio<<endl;
-        cout<<"    Numero exterior: "<<e[i].dir.numex<<endl;
-        cout<<"    Numero interior: "<<e[i].dir.numin<<endl;
-        cout<<"    Código postal: "<<e[i].dir.cp<<endl;
-        cout<<"    Teléfono: "<<e[i].telefono<<endl;
-        contador--;
-        cout<<"\n";
+    if(marca==0){
+        cout<<"La pila está vacía. ";getch();
+    }else{
+        for(i=marca-1;i>=0;i--){
+            cout<<contador<<".- Nombre: "<<e[i].nombre<<endl;
+            cout<<"    Apellido paterno: "<<e[i].apellidopat<<endl;
+            cout<<"    Apellido materno: "<<e[i].apellidomat<<endl;
+            cout<<"    Email: "<<e[i].email<<endl;
+            cout<<"    Edad: "<<e[i].edad<<endl;
+            cout<<"    Calle: "<<e[i].dir.calle<<endl;
+            cout<<"    Colonia: "<<e[i].dir.colonia<<endl;
+            cout<<"    Municipio: "<<e[i].dir.municipio<<endl;
+            cout<<"    Numero exterior: "<<e[i].dir.numex<<endl;
+            cout<<"    Numero interior: "<<e[i].dir.numin<<endl;
+            cout<<"    Código postal: "<<e[i].dir.cp<<endl;
+            cout<<"    Teléfono: "<<e[i].telefono<<endl;
+            contador--;
+            cout<<"\n";
+        }
+        getch();
     }
-    getch();
 }
