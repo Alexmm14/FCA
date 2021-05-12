@@ -78,10 +78,10 @@ void altas(){//Función para añadir datos
     string texto;
 
     if(marca>99){
-        gotoxy(1,18);cout<<"La pila esta llena."<<endl;cout<<"Intente otra opcion. ";//Caso de excepción
+        gotoxy(0,18);cout<<"La pila esta llena."<<endl;cout<<"Intente otra opcion. ";//Caso de excepción
         getch();
     }else{
-        gotoxy(1,18);cout<<"Digite los datos: "<<endl;fflush(stdin);//Captura de datos
+        gotoxy(0,18);cout<<"Digite los datos"<<endl;fflush(stdin);//Captura de datos
         cout<<"Digite el nombre: ";cin>>e[marca].nombre;fflush(stdin);
         cout<<"Digite el apellido paterno: ";cin>>e[marca].apellidopat;fflush(stdin);
         cout<<"Digite el apellido materno: ";cin>>e[marca].apellidomat;fflush(stdin);
@@ -124,12 +124,12 @@ void bajas(){//Pendiente
     ofstream archivo;
     string texto;
 
-    gotoxy(1,18);cout<<"Que posicion quiere dar de baja? ";cin>>posicion;
+    gotoxy(0,18);cout<<"Que posicion quiere dar de baja? ";cin>>posicion;
     if(posicion>99){
-        gotoxy(1,19);cout<<"Posicion invalida, digite otra posicion.";//Caso de excepción
+        cout<<"Posicion invalida, digite otra posicion.";//Caso de excepción
         getch();
     }else{
-        gotoxy(1,19);cout<<"Los datos de la posición "<<posicion<<" son: \n";//Datos previamente guardados
+        cout<<"Los datos de la posición "<<posicion<<" son: \n";//Datos previamente guardados
         cout<<"Nombre: "<<e[posicion].nombre<<endl;
         cout<<"Apellido paterno: "<<e[posicion].apellidopat<<endl;
         cout<<"Apellido materno: "<<e[posicion].apellidomat<<endl;
