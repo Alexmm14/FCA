@@ -1,7 +1,9 @@
 #include<iostream>
 #include<windows.h>
+#include<stdlib.h>
 #include<conio.h>
-#include<locale.h>
+#include<string.h>
+#include<fstream>
 using namespace std;
 
 int marca=0;//Variable global
@@ -23,8 +25,7 @@ void despliegues();
 void ordenes();
 
 struct direccion{//Estructura de datos de dirección
-	string calle,colonia,municipio,cp;
-    int numex,numin;
+	string calle,colonia,municipio,cp,numex,numin;
 };
 
 struct persona{//Estructura de datos generales
@@ -34,7 +35,6 @@ struct persona{//Estructura de datos generales
 persona e[101];
 
 int main(){//Función principal
-    setlocale(LC_ALL,"spanish");
     int opcion;
     do{
         menu();
@@ -47,7 +47,7 @@ int main(){//Función principal
             case 5:despliegues();break;
             case 6:ordenes();break;
             case 0:gotoxy(10,18);cout<<"FIN DEL PROGRAMA\n"<<endl;break;
-            default:gotoxy(10,18);cout<<"Opción inválida\n"<<endl;getch();break;
+            default:gotoxy(10,18);cout<<"Opcion invalida\n"<<endl;getch();break;
         }
     }while(opcion!=0);
     return 0;
@@ -56,7 +56,7 @@ int main(){//Función principal
 void menu(){//Función para pintar el menú de opciones
     system("cls");
     gotoxy(1,1);cout<< "****************************************";
-    gotoxy(1,2);cout<< "*                 MENÚ                 *";
+    gotoxy(1,2);cout<< "*                 MENU                 *";
     gotoxy(1,3);cout<< "****************************************";
     gotoxy(1,4);cout<< "*     OPCIONES                         *";
     gotoxy(1,5);cout<< "*                                      *";
@@ -69,16 +69,19 @@ void menu(){//Función para pintar el menú de opciones
     gotoxy(1,12);cout<<"*     0.- Salir                        *";
     gotoxy(1,13);cout<<"*                                      *";
     gotoxy(1,14);cout<<"****************************************";
-    gotoxy(1,15);cout<<"*     Digite una opción:               *";
+    gotoxy(1,15);cout<<"*     Digite una opcion:               *";
     gotoxy(1,16);cout<<"****************************************";
 }
 
-void altas(){//Función para crear datos
+void altas(){//Función para añadir datos
+    ofstream archivo;
+    string texto;
+
     if(marca>99){
-        gotoxy(1,18);cout<<"La pila está llena."<<endl;cout<<"Intente otra opción. ";
+        gotoxy(1,18);cout<<"La pila esta llena."<<endl;cout<<"Intente otra opcion. ";//Caso de excepción
         getch();
     }else{
-        gotoxy(1,18);cout<<"Digite los datos: "<<endl;fflush(stdin);
+        gotoxy(1,18);cout<<"Digite los datos: "<<endl;fflush(stdin);//Captura de datos
         cout<<"Digite el nombre: ";cin>>e[marca].nombre;fflush(stdin);
         cout<<"Digite el apellido paterno: ";cin>>e[marca].apellidopat;fflush(stdin);
         cout<<"Digite el apellido materno: ";cin>>e[marca].apellidomat;fflush(stdin);
@@ -87,23 +90,46 @@ void altas(){//Función para crear datos
         cout<<"Digite la calle donde vive: ";cin>>e[marca].dir.calle;fflush(stdin);
         cout<<"Digite la colonia donde vive: ";cin>>e[marca].dir.colonia;fflush(stdin);
         cout<<"Digite el municipio donde vive: ";cin>>e[marca].dir.municipio;fflush(stdin);
-        cout<<"Digite el número exterior de su vivienda: ";cin>>e[marca].dir.numex;fflush(stdin);
-        cout<<"Digite el número interior de su vivienda: ";cin>>e[marca].dir.numin;fflush(stdin);
-        cout<<"Digite el código postal: ";cin>>e[marca].dir.cp;fflush(stdin);
-        cout<<"Digite el teléfono: ";cin>>e[marca].telefono;
-        marca++;
+        cout<<"Digite el numero exterior de su vivienda: ";cin>>e[marca].dir.numex;fflush(stdin);
+        cout<<"Digite el numero interior de su vivienda: ";cin>>e[marca].dir.numin;fflush(stdin);
+        cout<<"Digite el codigo postal: ";cin>>e[marca].dir.cp;fflush(stdin);
+        cout<<"Digite el telefono: ";cin>>e[marca].telefono;
+
+        archivo.open("archivo.txt",ios::app);//Apertura de base de datos en forma de escritura
+        if(archivo.fail()){
+            cout<<"Error al guardar los datos."<<endl;
+        }
+
+        archivo<<"Nombre: "<<e[marca].nombre<<endl;//Se guardan los nuevos datos
+        archivo<<"Apellido paterno: "<<e[marca].apellidopat<<endl;
+        archivo<<"Apellido materno: : "<<e[marca].apellidomat<<endl;
+        archivo<<"Email: "<<e[marca].email<<endl;
+        archivo<<"Edad: "<<e[marca].edad<<endl;
+        archivo<<"Calle: "<<e[marca].dir.calle<<endl;
+        archivo<<"Colonia: "<<e[marca].dir.colonia<<endl;
+        archivo<<"Municipio: "<<e[marca].dir.municipio<<endl;
+        archivo<<"Número exterior: "<<e[marca].dir.numex<<endl;
+        archivo<<"Número interior: "<<e[marca].dir.numin<<endl;
+        archivo<<"Número código postal: "<<e[marca].dir.cp<<endl;
+        archivo<<"Teléfono: "<<e[marca].telefono<<endl;
+        archivo<<" "<<endl;
+        archivo.close();
+        marca+=1;
     }
 }
 
-void bajas(){//Función para eliminar datos
+void bajas(){//Pendiente
     int posicion,i;
     char decision;
-    gotoxy(1,18);cout<<"¿Qué posición quiere dar de baja? ";cin>>posicion;
+    ofstream archivo;
+    string texto;
+
+    gotoxy(1,18);cout<<"Que posicion quiere dar de baja? ";cin>>posicion;
     if(posicion>99){
-        gotoxy(1,19);cout<<"Posición inválida, digite otra posición.";
+        gotoxy(1,19);cout<<"Posicion invalida, digite otra posicion.";//Caso de excepción
         getch();
     }else{
-        gotoxy(1,19);cout<<"Los datos de la posición "<<posicion<<" son: \n";
+        gotoxy(1,19);cout<<"Los datos de la posición "<<posicion<<" son: \n";//Datos previamente guardados
         cout<<"Nombre: "<<e[posicion].nombre<<endl;
         cout<<"Apellido paterno: "<<e[posicion].apellidopat<<endl;
         cout<<"Apellido materno: "<<e[posicion].apellidomat<<endl;
@@ -112,16 +138,16 @@ void bajas(){//Función para eliminar datos
 		cout<<"Calle: "<<e[posicion].dir.calle<<endl;
 		cout<<"Colonia: "<<e[posicion].dir.colonia<<endl;
 		cout<<"Municipio: "<<e[posicion].dir.municipio<<endl;
-		cout<<"Número exterior: "<<e[posicion].dir.numex<<endl;
-		cout<<"Número interior: "<<e[posicion].dir.numin<<endl;
-		cout<<"Código postal: "<<e[posicion].dir.cp<<endl;
-        cout<<"Teléfono: "<<e[posicion].telefono<<endl;
-        cout<<"\n¿Seguro que quiere eliminar estos datos s/n?: ";cin>>decision;
+		cout<<"Numero exterior: "<<e[posicion].dir.numex<<endl;
+		cout<<"Numero interior: "<<e[posicion].dir.numin<<endl;
+		cout<<"Codigo postal: "<<e[posicion].dir.cp<<endl;
+        cout<<"Telefono: "<<e[posicion].telefono<<endl;
+        cout<<"\nSeguro que quiere eliminar estos datos s/n?: ";cin>>decision;//Captura de decision
         if(decision!='s'){
-            cout<<"No se borraron los datos de la posición "<<posicion;
+            cout<<"No se borraron los datos de la posicion "<<posicion;//Caso de negación
             getch();
         }else{
-                for(posicion;posicion<100-posicion;posicion++){
+            for(posicion;posicion<100-posicion;posicion++){//Eliminación de datos de la posición
                 e[posicion].nombre=e[posicion+1].nombre;
                 e[posicion].apellidopat=e[posicion+1].apellidopat;
                 e[posicion].apellidomat=e[posicion+1].apellidomat;
@@ -135,7 +161,30 @@ void bajas(){//Función para eliminar datos
                 e[posicion].dir.cp=e[posicion+1].dir.cp;
                 e[posicion].telefono=e[posicion+1].telefono;
             }
-            marca--;
+            marca-=1;
+
+            archivo.open("archivo.txt",ios::out);//Apertura de base de datos en modo sobreescritura
+            if(archivo.fail()){
+                cout<<"Error al eliminar los datos de la posicion "<<posicion;
+            }
+            i=marca;
+            
+            for(i=0;i<marca;i++){//Sobreescritura de datos
+                archivo<<"Nombre: "<<e[i].nombre<<endl;
+                archivo<<"Apellido paterno: "<<e[i].apellidopat<<endl;
+                archivo<<"Apellido materno: : "<<e[i].apellidomat<<endl;
+                archivo<<"Email: "<<e[i].email<<endl;
+                archivo<<"Edad: "<<e[i].edad<<endl;
+                archivo<<"Calle: "<<e[i].dir.calle<<endl;
+                archivo<<"Colonia: "<<e[i].dir.colonia<<endl;
+                archivo<<"Municipio: "<<e[i].dir.municipio<<endl;
+                archivo<<"Numero exterior: "<<e[i].dir.numex<<endl;
+                archivo<<"Numero interior: "<<e[i].dir.numin<<endl;
+                archivo<<"Codigo postal: "<<e[i].dir.cp<<endl;
+                archivo<<"Telefono: "<<e[i].telefono<<endl;
+                archivo<<" "<<endl;
+            }
+            archivo.close();
             cout<<"Datos dados de baja";
             getch();
         }
