@@ -4,6 +4,8 @@
 #include<conio.h>
 #include<string.h>
 #include<fstream>
+#include<cstdlib>
+#include <string>
 using namespace std;
 
 int marca=0;//Variable global
@@ -16,7 +18,6 @@ void gotoxy(int x,int y){//Declaración de funciones
       dwPos.Y= y;  
       SetConsoleCursorPosition(hcon,dwPos);
 }
-void arreglos();
 void menu();
 void altas();
 void bajas();
@@ -33,11 +34,10 @@ struct persona{//Estructura de datos generales
 	string nombre,apellidopat,apellidomat,email,edad,telefono,linea;
 	struct direccion dir;
 };
-persona e[111];
+persona e[200];
 
 int main(){//Función principal
     int opcion;
-    arreglos();
     do{
         menu();
         gotoxy(27,15);cin>>opcion;
@@ -53,27 +53,6 @@ int main(){//Función principal
         }
     }while(opcion!=0);
     return 0;
-}
-
-void arreglos(){//Función para llenar el arreglo con la base de datos
-    string nombre,apellidopat,apellidomat,email,edad,calle,colonia,municipio,numex,numin,cp,telefono,linea;
-    ifstream fin("archivo.txt"),archivo;
-    string auxiliar1,auxiliar2,dato;
-    
-    while(nombre != '------------------------------'){}
-    fin>>auxiliar1>>nombre;cin>>e[marca].nombre;
-    fin>>auxiliar1>>auxiliar2>x>apellidopat;cin>>e[marca].apellidopat;
-    fin>>auxiliar1>>auxiliar2>>apellidomat;cin>>e[marca].apellidomat;
-    fin>>auxiliar1>>email;cin>>e[marca].email;
-    fin>>auxiliar1>>edad;cin>>e[marca].edad;
-    fin>>auxiliar1>>calle;cin>>e[marca].dir.calle;
-    fin>>auxiliar1>>colonia;cin>>e[marca].dir.colonia;
-    fin>>auxiliar1>>municipio;cin>>e[marca].dir.municipio;
-    fin>>auxiliar1>>auxiliar2>>numex;cin>>e[marca].dir.numex;
-    fin>>auxiliar1>>auxiliar2>>numin;cin>>e[marca].dir.numin;
-    fin>>auxiliar1>>auxiliar2>>cp;cin>>e[marca].dir.cp;
-    fin>>auxiliar1>>telefono;cin>>e[marca].telefono;
-    fin>>linea;cin>>e[marca].linea;
 }
 
 void menu(){//Función para pintar el menú de opciones
@@ -136,10 +115,10 @@ void altas(){//Función para añadir datos
 }
 
 void bajas(){//Pendiente
-    int posicion,i;
+    int posicion,i=0,j=0,k=0;
     char decision;
-    ifstream fin("archivo.txt"),archivo;
-    ofstream archivo;
+    //ifstream fin("archivo.txt");
+    ifstream archivo("archivo.txt");
     string auxiliar1,auxiliar2,dato;
     string nombre,apellidopat,apellidomat,email,edad,calle,colonia,municipio,numex,numin,cp,telefono,linea;
 
@@ -149,10 +128,21 @@ void bajas(){//Pendiente
         getch();
     }else{
         cout<<"Los datos de la posicion "<<posicion<<" son: \n";//Datos previamente guardados
-        for(i=0;i<posicion*30;i++){
-            fin>>auxiliar1;
+        posicion=(posicion*13);
+
+        for(int contador=0;contador<200;contador++){
+            while(getline(archivo, e[k].nombre)){
+                if(i==j){
+                    cout<<e[k].nombre<<endl;
+                    k++;
+                    j=k;
+                    j*=13;
+                }
+                i++;
+            }
         }
-        fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
+
+        /*fin>>auxiliar1>>nombre;cout<<auxiliar1<<" "<<nombre<<endl;
         fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
@@ -164,34 +154,33 @@ void bajas(){//Pendiente
         fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
-        fin>>linea;cout<<linea<<endl;
+        fin>>linea;cout<<linea<<endl;*/
 
         cout<<"\nSeguro que quiere eliminar estos datos s/n?: ";cin>>decision;//Captura de decision
         if(decision!='s'){
             cout<<"No se borraron los datos de la posicion "<<posicion<<" ";//Caso de negación
             getch();
         }else{
-            archivo.open("archivo.txt",ios::app);//Abertura de la base de datos en modo
-            posicion+=1;
-            for(i=0;i<posicion*30;i++){
-                fin>>auxiliar1;
-            }
-            fin>>auxiliar1>>nombre;
-            fin>>auxiliar1>>auxiliar2>>apellidopat;
-            fin>>auxiliar1>>auxiliar2>>apellidomat;
-            fin>>auxiliar1>>email;
-            fin>>auxiliar1>>edad;
-            fin>>auxiliar1>>calle;
-            fin>>auxiliar1>>colonia;
-            fin>>auxiliar1>>municipio;
-            fin>>auxiliar1>>auxiliar2>>numex;
-            fin>>auxiliar1>>auxiliar2>>numin;
-            fin>>auxiliar1>>auxiliar2>>cp;
-            fin>>auxiliar1>>telefono;
-            fin>>linea;
 
-            archivo.close();
-            cout<<"Datos dados de baja";
+            for(i=0;i<5;i++){
+                cout<<e[j].nombre;
+                cout<<e[j].apellidopat;
+                cout<<e[j].apellidomat;
+                cout<<e[j].email;
+                cout<<e[j].edad;
+                cout<<e[j].dir.calle;
+                cout<<e[j].dir.colonia;
+                cout<<e[j].dir.municipio;
+                cout<<e[j].dir.numex;
+                cout<<e[j].dir.numin;
+                cout<<e[j].dir.cp;
+                cout<<e[j].telefono;
+                cout<<linea;
+            }
+            cout<<j;
+
+
+            //cout<<"Datos dados de baja";
             getch();
         }
     }
