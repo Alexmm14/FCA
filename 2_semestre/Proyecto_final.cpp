@@ -1241,28 +1241,29 @@ void consultas(){//Función para consultar una posición específica
     }
 }
 
-void despliegues(){//Pendiente
-    int contador=marca;
-    gotoxy(1,18);cout<<"Datos de la pila:"<<endl;
+void despliegues(){//Función para desplegar la base de datos
+    int contador=1;
+    gotoxy(1,18);cout<<"Registros de la base de datos"<<endl;
     if(marca==0){
-        cout<<"La pila está vacía. ";getch();
+        cout<<"La base de datos esta vacia. ";getch();
     }else{
-        for(int i=marca-1;i>=0;i--){
-            cout<<contador<<".- Nombre: "<<e[i].nombre<<endl;
-            cout<<"    Apellido paterno: "<<e[i].apellidopat<<endl;
-            cout<<"    Apellido materno: "<<e[i].apellidomat<<endl;
-            cout<<"    Email: "<<e[i].email<<endl;
-            cout<<"    Edad: "<<e[i].edad<<endl;
-            cout<<"    Calle: "<<e[i].dir.calle<<endl;
-            cout<<"    Colonia: "<<e[i].dir.colonia<<endl;
-            cout<<"    Municipio: "<<e[i].dir.municipio<<endl;
-            cout<<"    Numero exterior: "<<e[i].dir.numex<<endl;
-            cout<<"    Numero interior: "<<e[i].dir.numin<<endl;
-            cout<<"    Código postal: "<<e[i].dir.cp<<endl;
-            cout<<"    Teléfono: "<<e[i].telefono<<endl;
-            contador--;
+        for(int i=0;i<marca;i++){
+            cout<<contador<<".- "<<e[i].nombre<<endl;
+            cout<<"    "<<e[i].apellidopat<<endl;
+            cout<<"    "<<e[i].apellidomat<<endl;
+            cout<<"    "<<e[i].email<<endl;
+            cout<<"    "<<e[i].edad<<endl;
+            cout<<"    "<<e[i].dir.calle<<endl;
+            cout<<"    "<<e[i].dir.colonia<<endl;
+            cout<<"    "<<e[i].dir.municipio<<endl;
+            cout<<"    "<<e[i].dir.numex<<endl;
+            cout<<"    "<<e[i].dir.numin<<endl;
+            cout<<"    "<<e[i].dir.cp<<endl;
+            cout<<"    "<<e[i].telefono<<endl;
+            contador++;
             cout<<"\n";
         } 
+        cout<<"ENTER para volver al menu principal. ";
         getch();
     }
 }
