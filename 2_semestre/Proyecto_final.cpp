@@ -445,7 +445,7 @@ void cambios(){//Pendiente
             cout<<"Digite la edad: ";cin>>e[posicion].edad;fflush(stdin);
             cout<<"Digite la calle donde vive: ";cin>>e[posicion].dir.calle;fflush(stdin);
             cout<<"Digite la colonia donde vive: ";cin>>e[posicion].dir.colonia;fflush(stdin);
-            cout<<"Digite el municipio donde vive: ";cin>>e[posicion].dir.colonia;fflush(stdin);
+            cout<<"Digite el municipio donde vive: ";cin>>e[posicion].dir.municipio;fflush(stdin);
             cout<<"Digite el numero exterior de su vivienda: ";cin>>e[posicion].dir.numex;fflush(stdin);
             cout<<"Digite el numero interior de su vivienda: ";cin>>e[posicion].dir.numin;fflush(stdin);
             cout<<"Digite el codigo postal: ";cin>>e[posicion].dir.cp;fflush(stdin);
@@ -456,7 +456,7 @@ void cambios(){//Pendiente
                 cout<<"Error al guardar los cambios. ";
             }
 
-            for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
+            for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
                 archivo<<e[i].nombre<<endl;
                 archivo<<e[i].apellidopat<<endl;
                 archivo<<e[i].apellidomat<<endl;
@@ -471,6 +471,20 @@ void cambios(){//Pendiente
                 archivo<<e[i].telefono<<endl;
                 archivo<<e[i].linea<<endl;
             }
+
+            archivo<<"Nombre: "<<e[posicion].nombre<<endl;//Se guardan los nuevos datos
+            archivo<<"Apellido paterno: "<<e[posicion].apellidopat<<endl;
+            archivo<<"Apellido materno: "<<e[posicion].apellidomat<<endl;
+            archivo<<"Email: "<<e[posicion].email<<endl;
+            archivo<<"Edad: "<<e[posicion].edad<<endl;
+            archivo<<"Calle: "<<e[posicion].dir.calle<<endl;
+            archivo<<"Colonia: "<<e[posicion].dir.colonia<<endl;
+            archivo<<"Municipio: "<<e[posicion].dir.municipio<<endl;
+            archivo<<"Numero exterior: "<<e[posicion].dir.numex<<endl;
+            archivo<<"Numero interior: "<<e[posicion].dir.numin<<endl;
+            archivo<<"Codigo postal: "<<e[posicion].dir.cp<<endl;
+            archivo<<"Telefono: "<<e[posicion].telefono<<endl;
+            archivo<<e[posicion].linea<<endl;
             
             archivo.close();
             cout<<"Datos cambiados.";
@@ -489,99 +503,20 @@ void cambios(){//Pendiente
 		    cout<<"10.- "<<e[posicion].dir.numin<<endl;
 		    cout<<"11.- "<<e[posicion].dir.cp<<endl;
             cout<<"12.- "<<e[posicion].telefono<<endl;
-            cout<<"13.- Regresar al menu principal."<<endl;
             cout<<"\nDigite una opcion: ";cin>>decision_int;
 
             switch (decision_int){//Captura del nuevo dato
+                archivo.open("archivo.txt",ios::out);//Apertura de base de datos en forma de reescritura
+                if(archivo.fail()){
+                cout<<"Error al guardar los datos."<<endl;
+                }
                 case 1:cout<<"Digite el nuevo nombre: ";cin>>e[posicion].nombre;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-                    archivo<<"Nombre: "<<e[posicion].nombre<<endl;
-
-                    for(int i=0;i<marca;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 2:cout<<"Digite el nuevo apellido paterno: ";cin>>e[posicion].apellidopat;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 3:cout<<"Digite el nuevo apellido materno: ";cin>>e[posicion].apellidomat;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 4:cout<<"Digite el nuevo email: ";cin>>e[posicion].email;
                 archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
+                if(archivo.fail()){
                     cout<<"Error al guardar los cambios. ";
-                    }
+                }
 
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
+                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -595,231 +530,41 @@ void cambios(){//Pendiente
                     archivo<<e[i].dir.cp<<endl;
                     archivo<<e[i].telefono<<endl;
                     archivo<<e[i].linea<<endl;
-                    }
+                }
+
+                archivo<<"Nombre: "<<e[posicion].nombre<<endl;//Se guardan los nuevos datos
+                archivo<<"Apellido paterno: "<<e[posicion].apellidopat<<endl;
+                archivo<<"Apellido materno: "<<e[posicion].apellidomat<<endl;
+                archivo<<"Email: "<<e[posicion].email<<endl;
+                archivo<<"Edad: "<<e[posicion].edad<<endl;
+                archivo<<"Calle: "<<e[posicion].dir.calle<<endl;
+                archivo<<"Colonia: "<<e[posicion].dir.colonia<<endl;
+                archivo<<"Municipio: "<<e[posicion].dir.municipio<<endl;
+                archivo<<"Numero exterior: "<<e[posicion].dir.numex<<endl;
+                archivo<<"Numero interior: "<<e[posicion].dir.numin<<endl;
+                archivo<<"Codigo postal: "<<e[posicion].dir.cp<<endl;
+                archivo<<"Telefono: "<<e[posicion].telefono<<endl;
+                archivo<<e[posicion].linea<<endl;
             
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
+                archivo.close();
+                cout<<"Datos cambiados.";
+                getch();
                 break;
-
-                case 5:cout<<"Digite la nueva edad: ";cin>>e[posicion].edad;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 6:cout<<"Digite la nueva calle: ";cin>>e[posicion].dir.calle;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 7:cout<<"Digite la nueva colonia: ";cin>>e[posicion].dir.colonia;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 8:cout<<"Digite el nuevo municipio: ";cin>>e[posicion].dir.municipio;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 9:cout<<"Digite el nuevo numero exterior: ";cin>>e[posicion].dir.numex;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 10:cout<<"Digite el nuevo numero interior: ";cin>>e[posicion].dir.numin;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
+                case 2:cout<<"Digite el nuevo apellido paterno: ";cin>>e[posicion].apellidopat;break;
+                case 3:cout<<"Digite el nuevo apellido materno: ";cin>>e[posicion].apellidomat;break;
+                case 4:cout<<"Digite el nuevo email: ";cin>>e[posicion].email;break;
+                case 5:cout<<"Digite la nueva edad: ";cin>>e[posicion].edad;break;
+                case 6:cout<<"Digite la nueva calle: ";cin>>e[posicion].dir.calle;break;
+                case 7:cout<<"Digite la nueva colonia: ";cin>>e[posicion].dir.colonia;break;
+                case 8:cout<<"Digite el nuevo municipio: ";cin>>e[posicion].dir.municipio;break;
+                case 9:cout<<"Digite el nuevo numero exterior: ";cin>>e[posicion].dir.numex;break;
+                case 10:cout<<"Digite el nuevo numero interior: ";cin>>e[posicion].dir.numin; break;
                 case 11:cout<<"Digite el nuevo codigo postal: ";cin>>e[posicion].dir.cp;break;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
-
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
                 case 12:cout<<"Digite el nuevo telefono: ";cin>>e[posicion].telefono;break;
-                    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
-                    if(archivo.fail()){
-                    cout<<"Error al guardar los cambios. ";
-                    }
+                default:cout<<"Digite una opcion valida. ";exit(1);break;
 
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
-                    archivo<<e[i].nombre<<endl;
-                    archivo<<e[i].apellidopat<<endl;
-                    archivo<<e[i].apellidomat<<endl;
-                    archivo<<e[i].email<<endl;
-                    archivo<<e[i].edad<<endl;
-                    archivo<<e[i].dir.calle<<endl;
-                    archivo<<e[i].dir.colonia<<endl;
-                    archivo<<e[i].dir.municipio<<endl;
-                    archivo<<e[i].dir.numex<<endl;
-                    archivo<<e[i].dir.numin<<endl;
-                    archivo<<e[i].dir.cp<<endl;
-                    archivo<<e[i].telefono<<endl;
-                    archivo<<e[i].linea<<endl;
-                    }
-            
-                    archivo.close();
-                    cout<<"Dato cambiado. ";
-                    getch(); 
-                break;
-
-                case 13:cout<<"Presione ENTER para volver al menu principal. ";getch();break;
-                default:cout<<"Digite una opcion valida. ";getch();break;
+                cout<<"Dato cambiado. ";
+                getch();
             }
         }
     }

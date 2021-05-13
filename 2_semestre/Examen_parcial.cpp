@@ -113,10 +113,10 @@ void bajas(){//Función para eliminar datos
 		cout<<"Calle: "<<e[posicion].dir.calle<<endl;
 		cout<<"Colonia: "<<e[posicion].dir.colonia<<endl;
 		cout<<"Municipio: "<<e[posicion].dir.municipio<<endl;
-		cout<<"Número exterior: "<<e[posicion].dir.numex<<endl;
-		cout<<"Número interior: "<<e[posicion].dir.numin<<endl;
+		cout<<"Numero exterior: "<<e[posicion].dir.numex<<endl;
+		cout<<"Numero interior: "<<e[posicion].dir.numin<<endl;
 		cout<<"Código postal: "<<e[posicion].dir.cp<<endl;
-        cout<<"Teléfono: "<<e[posicion].telefono<<endl;
+        cout<<"Telefono: "<<e[posicion].telefono<<endl;
         cout<<"¿Desea dar de baja estos datos? s/n: ";cin>>decision;
         if(decision=='s'){
             for(posicion;posicion<100-posicion;posicion++){
@@ -142,9 +142,9 @@ void bajas(){//Función para eliminar datos
 
 void cambios(){//Función para cambiar datos
     int posicion;
-    gotoxy(1,18);cout<<"¿Qué posición quiere cambiar? ";cin>>posicion;
+    gotoxy(1,18);cout<<"Que posición quiere cambiar? ";cin>>posicion;
     if(posicion>99){
-        gotoxy(1,19);cout<<"Posición inválida, digite otra posición.";
+        gotoxy(1,19);cout<<"Posición invalida, digite otra posicion.";
         getch();
     }else{
         gotoxy(1,19);cout<<"Los datos de la posición "<<posicion<<" son: \n";
@@ -156,10 +156,10 @@ void cambios(){//Función para cambiar datos
 		cout<<"Calle: "<<e[posicion].dir.calle<<endl;
 		cout<<"Colonia: "<<e[posicion].dir.colonia<<endl;
 		cout<<"Municipio: "<<e[posicion].dir.municipio<<endl;
-		cout<<"Número exterior: "<<e[posicion].dir.numex<<endl;
-		cout<<"Número interior: "<<e[posicion].dir.numin<<endl;
-		cout<<"Código postal: "<<e[posicion].dir.cp<<endl;
-        cout<<"Teléfono: "<<e[posicion].telefono<<endl;
+		cout<<"Numero exterior: "<<e[posicion].dir.numex<<endl;
+		cout<<"Numero interior: "<<e[posicion].dir.numin<<endl;
+		cout<<"Codigo postal: "<<e[posicion].dir.cp<<endl;
+        cout<<"Telefono: "<<e[posicion].telefono<<endl;
 
         cout<<"\n\nDigite los nuevos datos"<<endl;fflush(stdin);
         cout<<"Digite el nombre: ";cin>>e[posicion].nombre;fflush(stdin);
