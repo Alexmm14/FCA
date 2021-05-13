@@ -47,7 +47,7 @@ struct persona{//Estructura de datos generales
 	string nombre,apellidopat,apellidomat,email,edad,telefono,linea;
 	struct direccion dir;
 };
-persona e[200];
+persona e[101];
 
 int main(){//Función principal
     int opcion;
@@ -66,6 +66,7 @@ int main(){//Función principal
         vintelefono();
         vinlinea();
         menu();
+        cout<<marca;
         gotoxy(27,15);cin>>opcion;
         switch (opcion){
             case 1:altas();break;
@@ -94,6 +95,7 @@ void vinnombre(){//Función que vincula el arreglo con la base de datos
             i++;
         }
     }
+    marca=(i/13);
 }
 
 void vinapepat(){//Función que vincula el arreglo con la base de datos
@@ -336,36 +338,73 @@ void altas(){//Función para añadir datos
 }
 
 void bajas(){//Pendiente
-    int posicion,i=0,j=0,k=0;
+    int posicion,i;
     char decision;
-    ifstream archivo("archivo.txt");
+    ofstream archivo;
 
     gotoxy(0,18);cout<<"Que posicion quiere dar de baja? ";cin>>posicion;
     if(posicion>99){
-        cout<<"Posicion invalida, digite otra posicion.";//Caso de excepción
+        cout<<"Posicion invalida, digite otra posicion. ";//Caso de excepción
         getch();
     }else{
         cout<<"Los datos de la posicion "<<posicion<<" son: \n";//Datos previamente guardados
-
-        for(int contador=0;contador<200;contador++){
-            while(getline(archivo, e[k].nombre)){
-                if(i==j){
-                    cout<<e[k].nombre<<endl;
-                    k++;
-                    j=k;
-                    j*=13;
-                }
-                i++;
-            }
-        }
-        cout<<e[5].nombre;
+        cout<<e[posicion].nombre<<endl;
+        cout<<e[posicion].apellidopat<<endl;
+        cout<<e[posicion].apellidomat<<endl;
+        cout<<e[posicion].email<<endl;
+        cout<<e[posicion].edad<<endl;
+		cout<<e[posicion].dir.calle<<endl;
+		cout<<e[posicion].dir.colonia<<endl;
+		cout<<e[posicion].dir.municipio<<endl;
+		cout<<e[posicion].dir.numex<<endl;
+		cout<<e[posicion].dir.numin<<endl;
+		cout<<e[posicion].dir.cp<<endl;
+        cout<<e[posicion].telefono<<endl;
+        cout<<e[posicion].linea<<endl;
 
         cout<<"\nSeguro que quiere eliminar estos datos s/n?: ";cin>>decision;//Captura de decision
         if(decision!='s'){
             cout<<"No se borraron los datos de la posicion "<<posicion<<" ";//Caso de negación
             getch();
         }else{
+            for(posicion;posicion<101-posicion;posicion++){
+                e[posicion].nombre=e[posicion+1].nombre;
+                e[posicion].apellidopat=e[posicion+1].apellidopat;
+                e[posicion].apellidomat=e[posicion+1].apellidomat;
+                e[posicion].email=e[posicion+1].email;
+                e[posicion].edad=e[posicion+1].edad;
+                e[posicion].dir.calle=e[posicion+1].dir.calle;
+                e[posicion].dir.colonia=e[posicion+1].dir.colonia;
+                e[posicion].dir.municipio=e[posicion+1].dir.municipio;
+                e[posicion].dir.numex=e[posicion+1].dir.numex;
+                e[posicion].dir.numin=e[posicion+1].dir.numin;
+                e[posicion].dir.cp=e[posicion+1].dir.cp;
+                e[posicion].telefono=e[posicion+1].telefono;
+                e[posicion].linea=e[posicion+1].linea;
+            }
 
+            archivo.open("archivo.txt",ios::out);//Apertura de base de datos en forma de escritura
+            if(archivo.fail()){
+                cout<<"Error al guardar los datos."<<endl;
+            }
+
+            for(i=0;i<marca;i++){
+                archivo<<e[i].nombre<<endl;//Se guardan los nuevos datos
+                archivo<<e[i].apellidopat<<endl;
+                archivo<<e[i].apellidomat<<endl;
+                archivo<<e[i].email<<endl;
+                archivo<<e[i].edad<<endl;
+                archivo<<e[i].dir.calle<<endl;
+                archivo<<e[i].dir.colonia<<endl;
+                archivo<<e[i].dir.municipio<<endl;
+                archivo<<e[i].dir.numex<<endl;
+                archivo<<e[i].dir.numin<<endl;
+                archivo<<e[i].dir.cp<<endl;
+                archivo<<e[i].telefono<<endl;
+                archivo<<e[i].linea<<endl;
+            }
+
+            archivo.close();
             cout<<"Datos dados de baja";
             getch();
         }
