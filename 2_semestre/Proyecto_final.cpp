@@ -98,7 +98,7 @@ void altas(){//Función para añadir datos
 
     archivo<<"Nombre: "<<e[marca].nombre<<endl;//Se guardan los nuevos datos
     archivo<<"Apellido paterno: "<<e[marca].apellidopat<<endl;
-    archivo<<"Apellido materno: : "<<e[marca].apellidomat<<endl;
+    archivo<<"Apellido materno: "<<e[marca].apellidomat<<endl;
     archivo<<"Email: "<<e[marca].email<<endl;
     archivo<<"Edad: "<<e[marca].edad<<endl;
     archivo<<"Calle: "<<e[marca].dir.calle<<endl;
@@ -108,9 +108,8 @@ void altas(){//Función para añadir datos
     archivo<<"Numero interior: "<<e[marca].dir.numin<<endl;
     archivo<<"Codigo postal: "<<e[marca].dir.cp<<endl;
     archivo<<"Telefono: "<<e[marca].telefono<<endl;
-    archivo<<" "<<endl;
+    archivo<<"------------------------------"<<endl;
     archivo.close();
-    marca+=1;
 }
 
 void bajas(){//Pendiente
@@ -125,12 +124,15 @@ void bajas(){//Pendiente
         getch();
     }else{
         cout<<"Los datos de la posicion "<<posicion<<" son: \n";//Datos previamente guardados
+        for(i=0;i<posicion*30;i++){
+            fin>>auxiliar1;
+        }
         fin>>auxiliar1>>dato;
         cout<<auxiliar1<<" "<<dato<<endl;
         fin>>auxiliar1>>auxiliar2>>dato;
-        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>auxiliar2>>dato;
-        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>dato;
         cout<<auxiliar1<<" "<<dato<<endl;
         fin>>auxiliar1>>dato;
@@ -142,34 +144,26 @@ void bajas(){//Pendiente
         fin>>auxiliar1>>dato;
         cout<<auxiliar1<<" "<<dato<<endl;
         fin>>auxiliar1>>auxiliar2>>dato;
-        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>auxiliar2>>dato;
-        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>auxiliar2>>dato;
-        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
         fin>>auxiliar1>>dato;
         cout<<auxiliar1<<" "<<dato<<endl;
+        fin>>auxiliar1;
+        cout<<auxiliar1<<endl;
 
         cout<<"\nSeguro que quiere eliminar estos datos s/n?: ";cin>>decision;//Captura de decision
         if(decision!='s'){
             cout<<"No se borraron los datos de la posicion "<<posicion<<" ";//Caso de negación
             getch();
         }else{
-            for(posicion;posicion<100-posicion;posicion++){//Eliminación de datos de la posición
-                e[posicion].nombre=e[posicion+1].nombre;
-                e[posicion].apellidopat=e[posicion+1].apellidopat;
-                e[posicion].apellidomat=e[posicion+1].apellidomat;
-                e[posicion].email=e[posicion+1].email;
-                e[posicion].edad=e[posicion+1].edad;
-                e[posicion].dir.calle=e[posicion+1].dir.calle;
-                e[posicion].dir.colonia=e[posicion+1].dir.colonia;
-                e[posicion].dir.municipio=e[posicion+1].dir.municipio;
-                e[posicion].dir.numex=e[posicion+1].dir.numex;
-                e[posicion].dir.numin=e[posicion+1].dir.numin;
-                e[posicion].dir.cp=e[posicion+1].dir.cp;
-                e[posicion].telefono=e[posicion+1].telefono;
+            archivo.open("archivo.txt",ios::in);//Abertura de la base de datos en modo
+            posicion+=1;
+            for(i=0;i<posicion*30;i++){
+                fin>>auxiliar1;
             }
-            marca-=1;
             archivo.close();
             cout<<"Datos dados de baja";
             getch();
