@@ -22,6 +22,15 @@ void vinnombre();
 void vinapepat();
 void vinapemat();
 void vinemail();
+void vinedad();
+void vincalle();
+void vincolonia();
+void vinmunicipio();
+void vinnumex();
+void vinnumin();
+void vincp();
+void vintelefono();
+void vinlinea();
 void menu();
 void altas();
 void bajas();
@@ -47,6 +56,15 @@ int main(){//Función principal
         vinapepat();
         vinapemat();
         vinemail();
+        vinedad();
+        vincalle();
+        vincolonia();
+        vinmunicipio();
+        vinnumex();
+        vinnumin();
+        vincp();
+        vintelefono();
+        vinlinea();
         menu();
         gotoxy(27,15);cin>>opcion;
         switch (opcion){
@@ -112,9 +130,144 @@ void vinemail(){//Función que vincula el arreglo con la base de datos
     ifstream archivo("archivo.txt");
     int i=0,j=3,k=0;
     for(int contador=0;contador<200;contador++){
-        while(getline(archivo, e[k].apellidomat)){
+        while(getline(archivo, e[k].email)){
                 if(i==j){
-                cout<<e[k].apellidomat<<endl;
+                cout<<e[k].email<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vinedad(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=4,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].edad)){
+                if(i==j){
+                cout<<e[k].edad<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vincalle(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=5,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].dir.calle)){
+                if(i==j){
+                cout<<e[k].dir.calle<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vincolonia(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=6,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].dir.colonia)){
+                if(i==j){
+                cout<<e[k].dir.colonia<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vinmunicipio(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=7,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].dir.municipio)){
+                if(i==j){
+                cout<<e[k].dir.municipio<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vinnumex(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=8,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].dir.numex)){
+                if(i==j){
+                cout<<e[k].dir.numex<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vinnumin(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=9,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].dir.numin)){
+                if(i==j){
+                cout<<e[k].dir.numin<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vincp(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=10,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].dir.cp)){
+                if(i==j){
+                cout<<e[k].dir.cp<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vintelefono(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=11,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].telefono)){
+                if(i==j){
+                cout<<e[k].telefono<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vinlinea(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=12,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].linea)){
+                if(i==j){
+                cout<<e[k].linea<<endl;
                 k++;
                 j+=13;
             }
