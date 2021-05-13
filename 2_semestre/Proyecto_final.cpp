@@ -411,7 +411,7 @@ void bajas(){//Función para eliminar una colección de datos
     }
 }
 
-void cambios(){//Pendiente
+void cambios(){//Función para cambiar una coleccion de datos
     int posicion,decision_int;
     char decision_char;
     ofstream archivo;
@@ -1214,26 +1214,29 @@ void cambios(){//Pendiente
     }
 }
 
-void consultas(){//Pendiente
+void consultas(){//Función para consultar una posición específica
     int posicion;
-    gotoxy(1,18);cout<<"¿Qué posición quiere consultar? ";cin>>posicion;
+    gotoxy(1,18);cout<<"Que posicion quiere consultar? ";cin>>posicion;
     if(posicion>99){
-        gotoxy(1,19);cout<<"Posición inválida, digite otra posición.";
+        cout<<"Posicion invalida, digite otra posicion.";
         getch();
     }else{
-        gotoxy(1,19);cout<<"Los datos de la posición "<<posicion<<" son: \n";
-        cout<<"Nombre: "<<e[posicion].nombre<<endl;
-        cout<<"Apellido paterno: "<<e[posicion].apellidopat<<endl;
-        cout<<"Apellido materno: "<<e[posicion].apellidomat<<endl;
-        cout<<"Email: "<<e[posicion].email<<endl;
-        cout<<"Edad: "<<e[posicion].edad<<endl;
-		cout<<"Calle: "<<e[posicion].dir.calle<<endl;
-		cout<<"Colonia: "<<e[posicion].dir.colonia<<endl;
-		cout<<"Municipio: "<<e[posicion].dir.municipio<<endl;
-		cout<<"Número exterior: "<<e[posicion].dir.numex<<endl;
-		cout<<"Número interior: "<<e[posicion].dir.numin<<endl;
-		cout<<"Código postal: "<<e[posicion].dir.cp<<endl;
-        cout<<"Teléfono: "<<e[posicion].telefono<<endl;
+        cout<<"Los datos de la posicion "<<posicion<<" son: \n";
+        cout<<e[posicion].nombre<<endl;
+        cout<<e[posicion].apellidopat<<endl;
+        cout<<e[posicion].apellidomat<<endl;
+        cout<<e[posicion].email<<endl;
+        cout<<e[posicion].edad<<endl;
+		cout<<e[posicion].dir.calle<<endl;
+		cout<<e[posicion].dir.colonia<<endl;
+		cout<<e[posicion].dir.municipio<<endl;
+		cout<<e[posicion].dir.numex<<endl;
+		cout<<e[posicion].dir.numin<<endl;
+		cout<<e[posicion].dir.cp<<endl;
+        cout<<e[posicion].telefono<<endl;
+        cout<<e[posicion].linea<<endl;
+        cout<<endl;
+        cout<<"ENTER para volver al menu principal. ";
         getch();
     }
 }
