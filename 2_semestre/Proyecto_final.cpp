@@ -77,122 +77,78 @@ void altas(){//Función para añadir datos
     ofstream archivo;
     string texto;
 
-    if(marca>99){
-        gotoxy(0,18);cout<<"La pila esta llena."<<endl;cout<<"Intente otra opcion. ";//Caso de excepción
-        getch();
-    }else{
-        gotoxy(0,18);cout<<"Digite los datos"<<endl;fflush(stdin);//Captura de datos
-        cout<<"Digite el nombre: ";cin>>e[marca].nombre;fflush(stdin);
-        cout<<"Digite el apellido paterno: ";cin>>e[marca].apellidopat;fflush(stdin);
-        cout<<"Digite el apellido materno: ";cin>>e[marca].apellidomat;fflush(stdin);
-        cout<<"Digite el email: ";cin>>e[marca].email;fflush(stdin);
-        cout<<"Digita la edad: ";cin>>e[marca].edad;fflush(stdin);
-        cout<<"Digite la calle donde vive: ";cin>>e[marca].dir.calle;fflush(stdin);
-        cout<<"Digite la colonia donde vive: ";cin>>e[marca].dir.colonia;fflush(stdin);
-        cout<<"Digite el municipio donde vive: ";cin>>e[marca].dir.municipio;fflush(stdin);
-        cout<<"Digite el numero exterior de su vivienda: ";cin>>e[marca].dir.numex;fflush(stdin);
-        cout<<"Digite el numero interior de su vivienda: ";cin>>e[marca].dir.numin;fflush(stdin);
-        cout<<"Digite el codigo postal: ";cin>>e[marca].dir.cp;fflush(stdin);
-        cout<<"Digite el telefono: ";cin>>e[marca].telefono;
+    gotoxy(0,18);cout<<"Digite los datos"<<endl;fflush(stdin);//Captura de datos
+    cout<<"Digite el nombre: ";cin>>e[marca].nombre;fflush(stdin);
+    cout<<"Digite el apellido paterno: ";cin>>e[marca].apellidopat;fflush(stdin);
+    cout<<"Digite el apellido materno: ";cin>>e[marca].apellidomat;fflush(stdin);
+    cout<<"Digite el email: ";cin>>e[marca].email;fflush(stdin);
+    cout<<"Digita la edad: ";cin>>e[marca].edad;fflush(stdin);
+    cout<<"Digite la calle donde vive: ";cin>>e[marca].dir.calle;fflush(stdin);
+    cout<<"Digite la colonia donde vive: ";cin>>e[marca].dir.colonia;fflush(stdin);
+    cout<<"Digite el municipio donde vive: ";cin>>e[marca].dir.municipio;fflush(stdin);
+    cout<<"Digite el numero exterior de su vivienda: ";cin>>e[marca].dir.numex;fflush(stdin);
+    cout<<"Digite el numero interior de su vivienda: ";cin>>e[marca].dir.numin;fflush(stdin);
+    cout<<"Digite el codigo postal: ";cin>>e[marca].dir.cp;fflush(stdin);
+    cout<<"Digite el telefono: ";cin>>e[marca].telefono;
 
-        archivo.open("archivo.txt",ios::app);//Apertura de base de datos en forma de escritura
-        if(archivo.fail()){
-            cout<<"Error al guardar los datos."<<endl;
-        }
-
-        archivo<<"Nombre: "<<e[marca].nombre<<endl;//Se guardan los nuevos datos
-        archivo<<"Apellido paterno: "<<e[marca].apellidopat<<endl;
-        archivo<<"Apellido materno: : "<<e[marca].apellidomat<<endl;
-        archivo<<"Email: "<<e[marca].email<<endl;
-        archivo<<"Edad: "<<e[marca].edad<<endl;
-        archivo<<"Calle: "<<e[marca].dir.calle<<endl;
-        archivo<<"Colonia: "<<e[marca].dir.colonia<<endl;
-        archivo<<"Municipio: "<<e[marca].dir.municipio<<endl;
-        archivo<<"Numero exterior: "<<e[marca].dir.numex<<endl;
-        archivo<<"Numero interior: "<<e[marca].dir.numin<<endl;
-        archivo<<"Codigo postal: "<<e[marca].dir.cp<<endl;
-        archivo<<"Telefono: "<<e[marca].telefono<<endl;
-        archivo<<" "<<endl;
-        archivo.close();
-        marca+=1;
+    archivo.open("archivo.txt",ios::app);//Apertura de base de datos en forma de escritura
+    if(archivo.fail()){
+        cout<<"Error al guardar los datos."<<endl;
     }
+
+    archivo<<"Nombre: "<<e[marca].nombre<<endl;//Se guardan los nuevos datos
+    archivo<<"Apellido paterno: "<<e[marca].apellidopat<<endl;
+    archivo<<"Apellido materno: : "<<e[marca].apellidomat<<endl;
+    archivo<<"Email: "<<e[marca].email<<endl;
+    archivo<<"Edad: "<<e[marca].edad<<endl;
+    archivo<<"Calle: "<<e[marca].dir.calle<<endl;
+    archivo<<"Colonia: "<<e[marca].dir.colonia<<endl;
+    archivo<<"Municipio: "<<e[marca].dir.municipio<<endl;
+    archivo<<"Numero exterior: "<<e[marca].dir.numex<<endl;
+    archivo<<"Numero interior: "<<e[marca].dir.numin<<endl;
+    archivo<<"Codigo postal: "<<e[marca].dir.cp<<endl;
+    archivo<<"Telefono: "<<e[marca].telefono<<endl;
+    archivo<<" "<<endl;
+    archivo.close();
+    marca+=1;
 }
 
 void bajas(){//Pendiente
     int posicion,i;
     char decision;
-    ifstream archivo;
-    string texto;
+    ifstream fin("archivo.txt"),archivo;
+    string auxiliar1,auxiliar2,dato;
 
     gotoxy(0,18);cout<<"Que posicion quiere dar de baja? ";cin>>posicion;
     if(posicion>99){
         cout<<"Posicion invalida, digite otra posicion.";//Caso de excepción
         getch();
     }else{
-        archivo.open("archivo.txt",ios::in);//Abertura de la base de datos en modo lectura
-        if(archivo.fail()){
-            cout<<"Error al consultar base de datos";
-        }
         cout<<"Los datos de la posicion "<<posicion<<" son: \n";//Datos previamente guardados
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].nombre);
-            cout<<e[posicion].nombre<<endl;
-        }
-        /*
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].apellidopat);
-            cout<<"Apellido paretno: "<<e[posicion].apellidopat<<endl;
-        }
-        
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].apellidomat);
-            cout<<"Apellido materno: "<<e[posicion].apellidomat<<endl;
-        }
-
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].email);
-            cout<<"Email: "<<e[posicion].email<<endl;
-        }
-
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].edad);
-            cout<<"Edad: "<<e[posicion].edad<<endl;
-        }
-        
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].dir.calle);
-            cout<<"Calle: "<<e[posicion].dir.calle<<endl;
-        }
-
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].dir.colonia);
-            cout<<"Colonia: "<<e[posicion].dir.colonia<<endl;
-        }
-
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].dir.municipio);
-            cout<<"Municipio: "<<e[posicion].dir.municipio<<endl;
-        }
-
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].dir.numex);
-            cout<<"Numero exterior: "<<e[posicion].dir.numex<<endl;
-        }
-
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].dir.numin);
-            cout<<"Numero interior: "<<e[posicion].dir.numin<<endl;
-        }
-
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].dir.cp);
-            cout<<"Codigo postal: "<<e[posicion].dir.cp<<endl;
-        }
-
-        while(!archivo.eof()){
-            getline(archivo,e[posicion].telefono);
-            cout<<"Telefono: "<<e[posicion].telefono<<endl;
-        }*/
+        fin>>auxiliar1>>dato;
+        cout<<auxiliar1<<" "<<dato<<endl;
+        fin>>auxiliar1>>auxiliar2>>dato;
+        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        fin>>auxiliar1>>auxiliar2>>dato;
+        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        fin>>auxiliar1>>dato;
+        cout<<auxiliar1<<" "<<dato<<endl;
+        fin>>auxiliar1>>dato;
+        cout<<auxiliar1<<" "<<dato<<endl;
+        fin>>auxiliar1>>dato;
+        cout<<auxiliar1<<" "<<dato<<endl;
+        fin>>auxiliar1>>dato;
+        cout<<auxiliar1<<" "<<dato<<endl;
+        fin>>auxiliar1>>dato;
+        cout<<auxiliar1<<" "<<dato<<endl;
+        fin>>auxiliar1>>auxiliar2>>dato;
+        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        fin>>auxiliar1>>auxiliar2>>dato;
+        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        fin>>auxiliar1>>auxiliar2>>dato;
+        cout<<auxiliar1<<auxiliar2<<" "<<dato<<endl;
+        fin>>auxiliar1>>dato;
+        cout<<auxiliar1<<" "<<dato<<endl;
 
         cout<<"\nSeguro que quiere eliminar estos datos s/n?: ";cin>>decision;//Captura de decision
         if(decision!='s'){
