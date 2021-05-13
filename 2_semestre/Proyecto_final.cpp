@@ -18,6 +18,10 @@ void gotoxy(int x,int y){//Declaración de funciones
       dwPos.Y= y;  
       SetConsoleCursorPosition(hcon,dwPos);
 }
+void vinnombre();
+void vinapepat();
+void vinapemat();
+void vinemail();
 void menu();
 void altas();
 void bajas();
@@ -39,6 +43,10 @@ persona e[200];
 int main(){//Función principal
     int opcion;
     do{
+        vinnombre();
+        vinapepat();
+        vinapemat();
+        vinemail();
         menu();
         gotoxy(27,15);cin>>opcion;
         switch (opcion){
@@ -53,6 +61,66 @@ int main(){//Función principal
         }
     }while(opcion!=0);
     return 0;
+}
+
+void vinnombre(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=0,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].nombre)){
+                if(i==j){
+                cout<<e[k].nombre<<endl;
+                k++;     
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vinapepat(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=1,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].apellidopat)){
+                if(i==j){
+                cout<<e[k].apellidopat<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vinapemat(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=2,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].apellidomat)){
+                if(i==j){
+                cout<<e[k].apellidomat<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
+}
+
+void vinemail(){//Función que vincula el arreglo con la base de datos
+    ifstream archivo("archivo.txt");
+    int i=0,j=3,k=0;
+    for(int contador=0;contador<200;contador++){
+        while(getline(archivo, e[k].apellidomat)){
+                if(i==j){
+                cout<<e[k].apellidomat<<endl;
+                k++;
+                j+=13;
+            }
+            i++;
+        }
+    }
 }
 
 void menu(){//Función para pintar el menú de opciones
@@ -117,10 +185,7 @@ void altas(){//Función para añadir datos
 void bajas(){//Pendiente
     int posicion,i=0,j=0,k=0;
     char decision;
-    //ifstream fin("archivo.txt");
     ifstream archivo("archivo.txt");
-    string auxiliar1,auxiliar2,dato;
-    string nombre,apellidopat,apellidomat,email,edad,calle,colonia,municipio,numex,numin,cp,telefono,linea;
 
     gotoxy(0,18);cout<<"Que posicion quiere dar de baja? ";cin>>posicion;
     if(posicion>99){
@@ -128,7 +193,6 @@ void bajas(){//Pendiente
         getch();
     }else{
         cout<<"Los datos de la posicion "<<posicion<<" son: \n";//Datos previamente guardados
-        posicion=(posicion*13);
 
         for(int contador=0;contador<200;contador++){
             while(getline(archivo, e[k].nombre)){
@@ -141,20 +205,7 @@ void bajas(){//Pendiente
                 i++;
             }
         }
-
-        /*fin>>auxiliar1>>nombre;cout<<auxiliar1<<" "<<nombre<<endl;
-        fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
-        fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
-        fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
-        fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
-        fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
-        fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
-        fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
-        fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
-        fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
-        fin>>auxiliar1>>auxiliar2>>dato;cout<<auxiliar1<<" "<<auxiliar2<<" "<<dato<<endl;
-        fin>>auxiliar1>>dato;cout<<auxiliar1<<" "<<dato<<endl;
-        fin>>linea;cout<<linea<<endl;*/
+        cout<<e[5].nombre;
 
         cout<<"\nSeguro que quiere eliminar estos datos s/n?: ";cin>>decision;//Captura de decision
         if(decision!='s'){
@@ -162,25 +213,7 @@ void bajas(){//Pendiente
             getch();
         }else{
 
-            for(i=0;i<5;i++){
-                cout<<e[j].nombre;
-                cout<<e[j].apellidopat;
-                cout<<e[j].apellidomat;
-                cout<<e[j].email;
-                cout<<e[j].edad;
-                cout<<e[j].dir.calle;
-                cout<<e[j].dir.colonia;
-                cout<<e[j].dir.municipio;
-                cout<<e[j].dir.numex;
-                cout<<e[j].dir.numin;
-                cout<<e[j].dir.cp;
-                cout<<e[j].telefono;
-                cout<<linea;
-            }
-            cout<<j;
-
-
-            //cout<<"Datos dados de baja";
+            cout<<"Datos dados de baja";
             getch();
         }
     }
