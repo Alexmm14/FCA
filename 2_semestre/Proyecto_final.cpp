@@ -298,7 +298,7 @@ void menu(){//Función para pintar el menú de opciones
     gotoxy(1,16);cout<<"****************************************";
 }
 
-void altas(){//Función para añadir datos
+void altas(){//Función para añadir una colección de datos
     ofstream archivo;
     string texto;
 
@@ -337,7 +337,7 @@ void altas(){//Función para añadir datos
     archivo.close();
 }
 
-void bajas(){//Pendiente
+void bajas(){//Función para eliminar una colección de datos
     int posicion,i;
     char decision;
     ofstream archivo;
@@ -388,8 +388,8 @@ void bajas(){//Pendiente
                 cout<<"Error al guardar los datos."<<endl;
             }
 
-            for(i=0;i<marca;i++){
-                archivo<<e[i].nombre<<endl;//Se guardan los nuevos datos
+            for(i=0;i<marca-1;i++){//Se guardan los nuevos datros
+                archivo<<e[i].nombre<<endl;
                 archivo<<e[i].apellidopat<<endl;
                 archivo<<e[i].apellidomat<<endl;
                 archivo<<e[i].email<<endl;
