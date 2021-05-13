@@ -456,7 +456,7 @@ void cambios(){//Pendiente
                 cout<<"Error al guardar los cambios. ";
             }
 
-            for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+            for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                 archivo<<e[i].nombre<<endl;
                 archivo<<e[i].apellidopat<<endl;
                 archivo<<e[i].apellidomat<<endl;
@@ -486,6 +486,22 @@ void cambios(){//Pendiente
             archivo<<"Telefono: "<<e[posicion].telefono<<endl;
             archivo<<e[posicion].linea<<endl;
             
+            for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                archivo<<e[i].nombre<<endl;
+                archivo<<e[i].apellidopat<<endl;
+                archivo<<e[i].apellidomat<<endl;
+                archivo<<e[i].email<<endl;
+                archivo<<e[i].edad<<endl;
+                archivo<<e[i].dir.calle<<endl;
+                archivo<<e[i].dir.colonia<<endl;
+                archivo<<e[i].dir.municipio<<endl;
+                archivo<<e[i].dir.numex<<endl;
+                archivo<<e[i].dir.numin<<endl;
+                archivo<<e[i].dir.cp<<endl;
+                archivo<<e[i].telefono<<endl;
+                archivo<<e[i].linea<<endl;
+            }
+
             archivo.close();
             cout<<"Datos cambiados.";
             getch();
@@ -512,7 +528,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -541,6 +557,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -553,7 +585,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -582,6 +614,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -594,7 +642,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -623,6 +671,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -635,7 +699,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -664,6 +728,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -676,7 +756,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -705,6 +785,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -717,7 +813,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -746,6 +842,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -758,7 +870,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -787,6 +899,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -799,7 +927,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -828,6 +956,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -840,7 +984,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -869,6 +1013,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -881,7 +1041,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -910,6 +1070,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -922,7 +1098,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -951,6 +1127,22 @@ void cambios(){//Pendiente
                 archivo<<"Codigo postal: "<<e[posicion].dir.cp<<endl;
                 archivo<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -963,7 +1155,7 @@ void cambios(){//Pendiente
                     cout<<"Error al guardar los cambios. ";
                 }
 
-                for(int i=0;i<marca-1;i++){//Se guardan los viejos datos
+                for(int i=0;i<posicion;i++){//Se guardan los viejos datos
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -992,6 +1184,22 @@ void cambios(){//Pendiente
                 archivo<<e[posicion].dir.cp<<endl;
                 archivo<<"Telefono: "<<e[posicion].telefono<<endl;
                 archivo<<e[posicion].linea<<endl;
+
+                for(int i=posicion+1;i<marca;i++){//Se guardan los viejos datos
+                    archivo<<e[i].nombre<<endl;
+                    archivo<<e[i].apellidopat<<endl;
+                    archivo<<e[i].apellidomat<<endl;
+                    archivo<<e[i].email<<endl;
+                    archivo<<e[i].edad<<endl;
+                    archivo<<e[i].dir.calle<<endl;
+                    archivo<<e[i].dir.colonia<<endl;
+                    archivo<<e[i].dir.municipio<<endl;
+                    archivo<<e[i].dir.numex<<endl;
+                    archivo<<e[i].dir.numin<<endl;
+                    archivo<<e[i].dir.cp<<endl;
+                    archivo<<e[i].telefono<<endl;
+                    archivo<<e[i].linea<<endl;
+                }
             
                 archivo.close();
                 cout<<"Dato cambiado.";
@@ -999,7 +1207,7 @@ void cambios(){//Pendiente
                 break;
 
                 default:cout<<"Digite una opcion valida. ";exit(1);break;
-                
+
                 getch();
             }
         }
