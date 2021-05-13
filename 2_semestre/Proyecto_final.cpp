@@ -411,7 +411,7 @@ void bajas(){//Función para eliminar una colección de datos
     }
 }
 
-void cambios(){//Función para cambiar datos
+void cambios(){//Pendiente
     int posicion,decision_int;
     char decision_char;
     ofstream archivo;
@@ -489,7 +489,7 @@ void cambios(){//Función para cambiar datos
 		    cout<<"10.- "<<e[posicion].dir.numin<<endl;
 		    cout<<"11.- "<<e[posicion].dir.cp<<endl;
             cout<<"12.- "<<e[posicion].telefono<<endl;
-            cout<<"13.- Regresar al menú principal."<<endl;
+            cout<<"13.- Regresar al menu principal."<<endl;
             cout<<"\nDigite una opcion: ";cin>>decision_int;
 
             switch (decision_int){//Captura del nuevo dato
@@ -498,8 +498,9 @@ void cambios(){//Función para cambiar datos
                     if(archivo.fail()){
                     cout<<"Error al guardar los cambios. ";
                     }
+                    archivo<<"Nombre: "<<e[posicion].nombre<<endl;
 
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
+                    for(int i=0;i<marca;i++){//Se guardan los nuevos datros
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -526,7 +527,7 @@ void cambios(){//Función para cambiar datos
                     cout<<"Error al guardar los cambios. ";
                     }
 
-                    for(int i=0;i<marca-1;i++){//Se guardan los nuevos datros
+                    for(int i=0;i<marca;i++){//Se guardan los nuevos datros
                     archivo<<e[i].nombre<<endl;
                     archivo<<e[i].apellidopat<<endl;
                     archivo<<e[i].apellidomat<<endl;
@@ -818,13 +819,13 @@ void cambios(){//Función para cambiar datos
                 break;
 
                 case 13:cout<<"Presione ENTER para volver al menu principal. ";getch();break;
-                default:cout<<"Digite una opción valida. ";getch();break;
+                default:cout<<"Digite una opcion valida. ";getch();break;
             }
         }
     }
 }
 
-void consultas(){//Función para consultar una posición
+void consultas(){//Pendiente
     int posicion;
     gotoxy(1,18);cout<<"¿Qué posición quiere consultar? ";cin>>posicion;
     if(posicion>99){
@@ -848,7 +849,7 @@ void consultas(){//Función para consultar una posición
     }
 }
 
-void despliegues(){//Función para desplegar toda la pila
+void despliegues(){//Pendiente
     int contador=marca;
     gotoxy(1,18);cout<<"Datos de la pila:"<<endl;
     if(marca==0){
@@ -874,7 +875,7 @@ void despliegues(){//Función para desplegar toda la pila
     }
 }
 
-void ordenes(){//Función para ordenar por apellidos
+void ordenes(){//Pendiente
     int i,j,contador=marca;
     persona tempo;
     cout<<"\n\n";
