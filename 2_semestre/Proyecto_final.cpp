@@ -66,7 +66,6 @@ int main(){//Función principal
         vintelefono();
         vinlinea();
         menu();
-        cout<<marca;
         gotoxy(27,15);cin>>opcion;
         switch (opcion){
             case 1:altas();break;
@@ -302,7 +301,7 @@ void altas(){//Función para añadir una colección de datos
     ofstream archivo;
     string texto;
 
-    gotoxy(0,18);cout<<"Digite los datos"<<endl;fflush(stdin);//Captura de datos
+    gotoxy(0,18);cout<<"CAPTURA DE DATOS"<<endl;fflush(stdin);//Captura de datos
     cout<<"Digite el nombre: ";cin>>e[marca].nombre;fflush(stdin);
     cout<<"Digite el apellido paterno: ";cin>>e[marca].apellidopat;fflush(stdin);
     cout<<"Digite el apellido materno: ";cin>>e[marca].apellidomat;fflush(stdin);
@@ -318,7 +317,8 @@ void altas(){//Función para añadir una colección de datos
 
     archivo.open("archivo.txt",ios::app);//Apertura de base de datos en forma de escritura
     if(archivo.fail()){
-        cout<<"Error al guardar los datos."<<endl;
+        cout<<"Error al guardar los datos.";
+        exit(1);
     }
 
     archivo<<"Nombre: "<<e[marca].nombre<<endl;//Se guardan los nuevos datos
@@ -334,7 +334,11 @@ void altas(){//Función para añadir una colección de datos
     archivo<<"Codigo postal: "<<e[marca].dir.cp<<endl;
     archivo<<"Telefono: "<<e[marca].telefono<<endl;
     archivo<<"------------------------------"<<endl;
+
     archivo.close();
+    cout<<"\nDatos guardados."<<endl;
+    cout<<"ENTER para voolver al menu principal. ";
+    getch();
 }
 
 void bajas(){//Función para eliminar una colección de datos
@@ -386,6 +390,7 @@ void bajas(){//Función para eliminar una colección de datos
             archivo.open("archivo.txt",ios::out);//Apertura de base de datos en modo reescritura
             if(archivo.fail()){
                 cout<<"Error al guardar los cambios.";
+                exit(1);
             }
 
             for(i=0;i<marca-1;i++){//Se guardan los nuevos datros
@@ -405,7 +410,8 @@ void bajas(){//Función para eliminar una colección de datos
             }
 
             archivo.close();
-            cout<<"Datos dados de baja";
+            cout<<"\nDatos eliminados."<<endl;
+            cout<<"ENTER para volver al menu principal. ";
             getch();
         }
     }
@@ -437,7 +443,7 @@ void cambios(){//Función para cambiar una coleccion de datos
             cout<<e[posicion].telefono<<endl;
             cout<<e[posicion].linea<<endl;
 
-            cout<<"\nDigite los nuevos datos"<<endl;fflush(stdin);//Captura de nuevos datos
+            cout<<"\nCAPTURA DE LOS NUEVOS DATOS"<<endl;fflush(stdin);//Captura de nuevos datos
             cout<<"Digite el nombre: ";cin>>e[posicion].nombre;fflush(stdin);
             cout<<"Digite el apellido paterno: ";cin>>e[posicion].apellidopat;fflush(stdin);
             cout<<"Digite el apellido materno: ";cin>>e[posicion].apellidomat;fflush(stdin);
@@ -454,6 +460,7 @@ void cambios(){//Función para cambiar una coleccion de datos
             archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
             if(archivo.fail()){
                 cout<<"Error al guardar los cambios. ";
+                exit(1);
             }
 
             for(int i=0;i<posicion;i++){//Se guardan los viejos datos
@@ -503,10 +510,11 @@ void cambios(){//Función para cambiar una coleccion de datos
             }
 
             archivo.close();
-            cout<<"Datos cambiados.";
+            cout<<"\nDatos cambiados."<<endl;
+            cout<<"ENTER para volver al menu principal. ";
             getch();
         }else{//Cambio de sólo un dato
-            cout<<"\n Menu de opciones"<<endl;
+            cout<<"\nMENU DE OPCIONES"<<endl;
             cout<<"1.- "<<e[posicion].nombre<<endl;
             cout<<"2.- "<<e[posicion].apellidopat<<endl;
             cout<<"3.- "<<e[posicion].apellidomat<<endl;
@@ -575,7 +583,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -632,7 +641,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -689,7 +699,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -747,6 +758,7 @@ void cambios(){//Función para cambiar una coleccion de datos
             
                 archivo.close();
                 cout<<"Dato cambiado.";
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -803,7 +815,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -860,7 +873,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -917,7 +931,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -974,7 +989,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -1031,7 +1047,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -1088,7 +1105,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -1145,7 +1163,8 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
@@ -1202,13 +1221,12 @@ void cambios(){//Función para cambiar una coleccion de datos
                 }
             
                 archivo.close();
-                cout<<"Dato cambiado.";
+                cout<<"Dato cambiado."<<endl;
+                cout<<"ENTER para volver al menu principal. ";
                 getch();
                 break;
 
-                default:cout<<"Digite una opcion valida. ";exit(1);break;
-
-                getch();
+                default:cout<<"Opcion valida. ";exit(1);break;
             }
         }
     }
@@ -1236,14 +1254,14 @@ void consultas(){//Función para consultar una posición específica
         cout<<e[posicion].telefono<<endl;
         cout<<e[posicion].linea<<endl;
         cout<<endl;
-        cout<<"ENTER para volver al menu principal. ";
+        cout<<"\nENTER para volver al menu principal. ";
         getch();
     }
 }
 
 void despliegues(){//Función para desplegar la base de datos
     int contador=0;
-    gotoxy(1,18);cout<<"Registros de la base de datos"<<endl;
+    gotoxy(0,18);cout<<"\nRegistros de la base de datos"<<endl;
     if(marca==0){
         cout<<"La base de datos esta vacia. ";getch();
     }else{
@@ -1271,8 +1289,7 @@ void despliegues(){//Función para desplegar la base de datos
 void ordenes(){//Función para ordenar colecciones alfabeticamente
     int i,j,contador=0;
     persona tempo;
-    cout<<"\n\n";
-    for(i=0;i<100;i++){
+    for(i=0;i<100;i++){//Se ordenan los datos
         for(j=0;j<99;j++){
             if(e[j].apellidopat < e[j+1].apellidopat){
                 tempo=e[j];
@@ -1283,8 +1300,9 @@ void ordenes(){//Función para ordenar colecciones alfabeticamente
     }
 
     if(marca==0){
-        cout<<"La base de datos esta vacia. ";getch();
+        gotoxy(0,18);cout<<"La base de datos esta vacia. ";getch();
     }else{
+        gotoxy(0,18);cout<<"Registros de la base de datos"<<endl;//Se muestran los datos ordenados
         for(i=marca-1;i>=0;i--){
             cout<<contador<<".- "<<e[i].nombre<<endl;
             cout<<"    "<<e[i].apellidopat<<endl;
