@@ -47,7 +47,7 @@ struct persona{//Estructura de datos generales
 	string nombre,apellidopat,apellidomat,email,edad,telefono,linea;
 	struct direccion dir;
 };
-persona e[101];
+persona e[100];
 
 int main(){//Función principal
     int opcion;
@@ -337,7 +337,7 @@ void altas(){//Función para añadir una colección de datos
 
     archivo.close();
     cout<<"\nDatos guardados."<<endl;
-    cout<<"ENTER para voolver al menu principal. ";
+    cout<<"ENTER para volver al menu principal. ";
     getch();
 }
 
@@ -1289,6 +1289,7 @@ void despliegues(){//Función para desplegar la base de datos
 void ordenes(){//Función para ordenar colecciones alfabeticamente
     int i,j,contador=0;
     persona tempo;
+    ofstream archivo;
     for(i=0;i<100;i++){//Se ordenan los datos
         for(j=0;j<99;j++){
             if(e[j].apellidopat < e[j+1].apellidopat){
@@ -1298,6 +1299,28 @@ void ordenes(){//Función para ordenar colecciones alfabeticamente
             }
         }
     }
+
+    archivo.open("archivo.txt",ios::out);//Apertura de la base de datos en modo reescritura
+            if(archivo.fail()){
+                cout<<"Error al guardar los cambios. ";
+                exit(1);
+            }
+            for(i=marca-1;i>=0;i--){//Se guardan los viejos datos
+                archivo<<e[i].nombre<<endl;
+                archivo<<e[i].apellidopat<<endl;
+                archivo<<e[i].apellidomat<<endl;
+                archivo<<e[i].email<<endl;
+                archivo<<e[i].edad<<endl;
+                archivo<<e[i].dir.calle<<endl;
+                archivo<<e[i].dir.colonia<<endl;
+                archivo<<e[i].dir.municipio<<endl;
+                archivo<<e[i].dir.numex<<endl;
+                archivo<<e[i].dir.numin<<endl;
+                archivo<<e[i].dir.cp<<endl;
+                archivo<<e[i].telefono<<endl;
+                archivo<<e[i].linea<<endl;
+            }
+    archivo.close();
 
     if(marca==0){
         gotoxy(0,18);cout<<"La base de datos esta vacia. ";getch();
