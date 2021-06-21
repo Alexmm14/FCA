@@ -1,0 +1,39 @@
+Nombre: jose raul
+Apellido paterno: capablanca
+Apellido materno: crin
+Email: capablanca@email.com
+Edad: 30
+Calle: camino
+Colonia: ligua
+Municipio: concreto
+Numero exterior: 47
+Numero interior: 0
+Codigo postal: 32165
+Telefono: 6649875563
+------------------------------
+Nombre: magnus
+Apellido paterno: carlsen
+Apellido materno: Ernst
+Email: magnus@email.com
+Edad: 30
+Calle: puerto
+Colonia: Sihuatanejo
+Municipio: gam
+Numero exterior: 47
+Numero interior: 0
+Codigo postal: 32165
+Telefono: 6649875563
+------------------------------
+Nombre: garry
+Apellido paterno: kasparov
+Apellido materno: duk
+Email: kasparov@email.com
+Edad: 50
+Calle: zar
+Colonia: Borche
+Municipio: pool
+Numero exterior: 564
+Numero interior: 23
+Codigo postal: 54663
+Telefono: 5547987746
+------------------------------
