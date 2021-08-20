@@ -16,7 +16,7 @@ int main (){
     printf("\n\n");
 
     //c)
-    printf("Estamos\naprendiendo /naprogramar en C");
+    printf("Estamos\naprendiendo \na programar en C");
     getch();
     printf("\n\n");
 
