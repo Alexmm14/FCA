@@ -1,17 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct snodo {
 	int valor;
 	struct snodo *sig;
 } tnodo;
-
 typedef tnodo *tpuntero;
-
 void insertaralprincipio(tpuntero *cabeza, int dato);
 void imprimirlista(tpuntero cabeza);
 void borrarlista(tpuntero *cabeza);
-
 int main() {
 	tpuntero cabeza;
 	int e;
@@ -27,7 +23,6 @@ int main() {
 
 	return 0;
 }
-
 void insertaralprincipio(tpuntero *cabeza, int dato) {
 	tpuntero nuevo;
 	nuevo=(tpuntero) malloc(sizeof(tnodo));
@@ -35,14 +30,12 @@ void insertaralprincipio(tpuntero *cabeza, int dato) {
 	nuevo->sig=*cabeza;
 	*cabeza=nuevo;
 }
-
 void imprimirlista(tpuntero cabeza) {
 	while(cabeza!=NULL) {
 		printf("%4d", cabeza->valor);
 		cabeza=cabeza->sig;
 	}
 }
-
 void borrarlista(tpuntero *cabeza) {
 	tpuntero actual;
 	while(*cabeza!=NULL) {

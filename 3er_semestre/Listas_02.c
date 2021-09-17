@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
- 
 typedef struct nodo_s
 {
  int dato;
  struct nodo_s *siguiente;
 } nodo_t;
- 
 typedef nodo_t *ptrNodo;
 typedef nodo_t *ptrLista;
 ptrNodo crea_nodo(int valor)
@@ -17,7 +15,6 @@ ptrNodo crea_nodo(int valor)
      nuevo_nodo->dato = valor;
      nuevo_nodo->siguiente = NULL;
     }
- 
  return nuevo_nodo;
 }
 void inserta_despues(ptrLista *lista, ptrNodo nodo, int valor)

@@ -2,25 +2,21 @@
 #include <stdlib.h>
 #define Nodo struct nodo 
 #define Lista struct lista
-
-Nodo{//Definición del nuevo tipo de dato
+Nodo{
 	int dato;
 	Nodo *siguiente;
 };
-
-Lista{//Definición de los apuntadores de las listas
+Lista{
 	Nodo *inicio;
 	Nodo *final;
 };
-
-Lista crearLista(){//Función para crear la nueva lista
+Lista crearLista(){
 	Lista lista;
 	lista.inicio=NULL;
 	lista.final=NULL;
 	return lista;
 }
-
-void insertar(Lista *lista,int dato){//Función para insertar elementos en la lista
+void insertar(Lista *lista,int dato){
 	Nodo *nuevo=(Nodo*)malloc(sizeof(Nodo));
 	nuevo->dato=dato;
 	nuevo->siguiente=NULL;
@@ -33,16 +29,14 @@ void insertar(Lista *lista,int dato){//Función para insertar elementos en la li
 		lista->inicio=nuevo;
 	}
 }
-
-void borrarPila(Lista *lista){//Función para recuperar el primer elemento de una Pila
+void borrarPila(Lista *lista){
 	Nodo *aux=lista->inicio;
 	if(aux!=NULL){
 		lista->inicio=aux->siguiente;
 		free(aux);
 	}
 }
-
-void borrarCola(Lista *lista){//Función para recuperar el primer elemento de la cola
+void borrarCola(Lista *lista){
 	Nodo *aux=lista->inicio;
 	if(aux!=NULL){
 		if(aux==lista->final){
@@ -61,16 +55,14 @@ void borrarCola(Lista *lista){//Función para recuperar el primer elemento de la
 		free(aux);
 	}
 }
-
-void imprimir(Lista lista){//Función para imprimir las listas
+void imprimir(Lista lista){
 	Nodo *aux=lista.inicio;
 	while(aux!=NULL){
 		printf("%i ",aux->dato);
 		aux=aux->siguiente;
 	}
 }
-
-int main(int argc, char *argv[]) {//Función principal MAIN
+int main(int argc, char *argv[]) {
 	Lista Cola=crearLista();
 	Lista Pila=crearLista();
 	int N,i,dato;

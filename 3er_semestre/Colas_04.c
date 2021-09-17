@@ -21,7 +21,6 @@ void Add_EmptyList(int dato){
 	NodoFinal = NodoExample;
 	NodoExample->Siguiente = NULL;
 }
-
 void Push_Stack(int dato){
 	Nodo *NodoExample = (Nodo*)malloc(sizeof(Nodo));
 	if(NodoExample == NULL){

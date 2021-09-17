@@ -1,15 +1,12 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
-
 struct nodo {
     int info;
     struct nodo *sig;
 };
-
 struct nodo *raiz=NULL;
 struct nodo *fondo=NULL;
-
 void insertar(int x)
 {
     struct nodo *nuevo;
@@ -49,7 +46,6 @@ int extraer()
     else
         return -1;
 }
-
 void imprimir()
 {
     struct nodo *reco = raiz;
@@ -61,8 +57,6 @@ void imprimir()
     }
     printf("\n");
 }
-
-
 void liberar()
 {
     struct nodo *reco = raiz;
@@ -74,7 +68,6 @@ void liberar()
         free(bor);
     }
 }
-
 void main()
 {
     insertar(5);
