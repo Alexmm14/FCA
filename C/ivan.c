@@ -12,24 +12,21 @@
 typedef struct nodo {
    int iValor;
    char sNombre [20];
-   struct nodo *siguiente;// es un aputnaador a un nodo q
+   struct nodo *siguiente;// es un aputnaador a un nodo
 } tipoNodo;//
 
 typedef tipoNodo *pNodo;
 
 /* Funciones con pilas: */
-void Push(int iValor,char sNombre [20], pNodo *ultimo ) {
+void Push(int iValor,char sNombre [20],pNodo *ultimo) {
    pNodo nuevo;
- 	
    /* Crear un nodo nuevo */
    nuevo = (pNodo)malloc(sizeof(tipoNodo));
    //nuevo = (pNodo)malloc(sizeof(tipoNodo));
    nuevo->iValor = iValor;
    nuevo->sNombre[20] = sNombre[20];
    /* A�adimos la pila a continuaci�n del nuevo nodo */
- 
    nuevo->siguiente = *ultimo;
-  
    /* Ahora, el comienzo de nuestra pila es en nuevo nodo */
    *ultimo = nuevo;
 }
@@ -49,8 +46,8 @@ int Pop(pNodo *pila) {
    /* Borrar el nodo */
    free(nodo);
    return iValor;
-  // return sNombre[20];
-} 
+   //return sNombre[20];
+}
 
 int main() {
    pNodo pila = NULL;
@@ -63,7 +60,7 @@ int main() {
    Push(40,"cuarenta", &pila);
    Push(50,"cicuenta", &pila);
 
-   printf("%d, ", Pop(&pila));
+   printf("%d, %c", Pop(&pila),);
    printf("%d, ", Pop(&pila));
    Push(60,"sesenta", &pila);
    printf("%d, ", Pop(&pila));
