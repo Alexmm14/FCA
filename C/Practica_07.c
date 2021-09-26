@@ -1,7 +1,6 @@
 //Directivas al preprocesador
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
 #include<conio.h>
 //Declaración e inicialización de matrices globales
 int MDT[3][3]={0,0,0,0,0,0,0,0,0},MCT[3][3]={0,0,0,0,0,0,0,0,0},MTB[3][3];
