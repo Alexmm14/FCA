@@ -1,82 +1,80 @@
-// A simple C program to introduce
-// a linked list
+//Un programa C simple para introducir una lista vinculada
 #include <stdio.h>
 #include <stdlib.h>
 
 struct Node {
-    int data;
-    struct Node* next;
+    int datos;
+    struct Node* siguiente;
 };
-// Program to create a simple linked
-// list with 3 nodes
+//Programa para crear una lista enlazada sencilla con 3 nodos
 int main()
 {
-    struct Node* head = NULL;
-    struct Node* second = NULL;
-    struct Node* third = NULL;
+    struct Node* cabeza = NULL;
+    struct Node* segundo = NULL;
+    struct Node* tercero = NULL;
 
-    // allocate 3 nodes in the heap
-    head = (struct Node*)malloc(sizeof(struct Node));
-    second = (struct Node*)malloc(sizeof(struct Node));
-    third = (struct Node*)malloc(sizeof(struct Node));
+    //Asignar nodos en el montón
+    cabeza = (struct Node*)malloc(sizeof(struct Node));
+    segundo = (struct Node*)malloc(sizeof(struct Node));
+    tercero = (struct Node*)malloc(sizeof(struct Node));
 
-    /* Three blocks have been allocated dynamically.
-     We have pointers to these three blocks as head,
-     second and third
-       head           second           third
+    /* Se han asignado tres bloques dinámicamente.
+     Tenemos punteros a estos tres bloques como cabeza,
+     segundo y tercero
+      cabeza          segundo          tercero
         |                |               |
         |                |               |
     +---+-----+     +----+----+     +----+----+
     | #  | #  |     | #  | #  |     |  # |  # |
     +---+-----+     +----+----+     +----+----+
-# represents any random value.
-   Data is random because we haven�t assigned
-   anything yet  */
+# representa cualquier valor aleatorio.
+   Los datos son aleatorios porque no hemos asignado
+   cualquier cosa todavía  */
 
-    head->data = 1; // assign data in first node
-    head->next = second; // Link first node with
-    // the second node
+    cabeza->datos = 1; // asignar datos en el primer nodo
+    cabeza->siguiente = segundo; // Vincular el primer nodo con
+    // el segundo nodo
 
-    /* data has been assigned to the data part of the first
-     block (block pointed by the head). And next
-     pointer of first block points to second.
-     So they both are linked.
+    /* Los datos se han asignado a la parte de datos del primero
+     bloque (bloque apuntado por la cabeza). Y a continuación
+     puntero del primer bloque apunta al segundo.
+     Así que ambos están vinculados.
 
-       head          second         third
+      cabeza        segundo        tercero
         |              |              |
         |              |              |
     +---+---+     +----+----+     +-----+----+
     | 1  | o----->| #  | #  |     |  #  | #  |
     +---+---+     +----+----+     +-----+----+
   */
-// assign data to second node
-    second->data = 2;
+// asignar datos en el segundo nodo
+    segundo->datos = 2;
 
-    // Link second node with the third node
-    second->next = third;
+    // vincular el segudo nodo con el tercero
+    segundo->siguiente = tercero;
 
-    /* data has been assigned to the data part of the second
-     block (block pointed by second). And next
-     pointer of the second block points to the third
-     block. So all three blocks are linked.
+    /* los datos se han asignado a la parte de datos del segundo
+     bloque (bloque apuntado por segundo). Y a continuación
+     puntero del segundo bloque apunta al tercero
+     Bloquear. Así que los tres bloques están vinculados.
 
-       head         second         third
+      cabeza       segundo        tercero
         |             |             |
         |             |             |
     +---+---+     +---+---+     +----+----+
     | 1  | o----->| 2 | o-----> |  # |  # |
     +---+---+     +---+---+     +----+----+      */
 
-    third->data = 3; // assign data to third node
-    third->next = NULL;
-/* data has been assigned to data part of third
-    block (block pointed by third). And next pointer
-    of the third block is made NULL to indicate
-    that the linked list is terminated here.
+    tercero->datos = 3; // asignar datos en el tercer nodo
+    tercero->siguiente = NULL;
+/* los datos se han asignado a la parte de datos de terceros
+    bloque (bloque apuntado por tercio). Y siguiente puntero
+    del tercer bloque se hace NULL para indicar
+    que la lista enlazada se termina aquí.
 
-     We have the linked list ready.
+Tenemos lista la lista enlazada.
 
-           head
+           cabeza
              |
              |
         +---+---+     +---+---+       +----+------+
@@ -84,9 +82,9 @@ int main()
         +---+---+     +---+---+       +----+------+
 
 
-    Note that only head is sufficient to represent
-    the whole list.  We can traverse the complete
-    list by following next pointers.    */
+    Tenga en cuenta que solo la cabeza es suficiente para representar toda la lista.
+    Podemos atravesar la lista completa
+    enmerando los siguientes punteros.    */
 
     return 0;
 }

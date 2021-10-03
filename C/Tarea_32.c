@@ -28,6 +28,19 @@ void atravesar()
         }
     }
 }
+//Función que inseta un elemento al inicio de la lista enlazada
+void alFrente()
+{
+    int dato;
+    struct nodo* temporal;
+    temporal = malloc(sizeof(struct nodo));
+    printf("\nCapture el numero a ser insertado en la lista : ");
+    scanf("%d", &dato);
+    temporal->info = dato;
+    // El puntero de temporal será asignado al inicio
+    temporal->link = inicia;
+    inicia = temporal;
+}
 // Función que inserta un elemento al final de la lista enlazada
 void alFinal()
 {
