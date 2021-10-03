@@ -1,7 +1,8 @@
 // Programa que realiza todas las operaciones en una lista de enlaces individual
 
 #include <stdio.h>
-  
+#include<stdlib.h>
+
 // Se inicia con el nodo de la lista enlazada
 struct nodo {
     int info;
@@ -32,7 +33,7 @@ void alFinal()
 {
     int dato;
     struct nodo *temporal, *principio;
-    temp = malloc(sizeof(struct node));
+    temporal = malloc(sizeof(struct nodo));
   
     // Se captura el elemento
     printf("\nCapture el numero a ser insertado, por favor  : ");
@@ -100,7 +101,7 @@ void borrarUltimo()
 //Función que borra un elemento desde cualquier posición indicada en la lista enlazada
 void borrarPosicion()
 {
-    struct node *temporal, *posicion;
+    struct nodo *temporal,*posicion;
     int i = 1, pos;
   
     // Si la lista enlazada esta vacia, se informa
@@ -126,14 +127,12 @@ void borrarPosicion()
         temporal->link = posicion->link;
   
         // Se libera memoria
-        free(position);
+        free(posicion);
     }
 }
 // Función para encontrar el elemento más alto (máximo) en la lista enlazada
 void mayor()
 {
-    int a[10];
-    int i;
     struct nodo* temporal;
   
     // Si la lista enlazada esta vacía
@@ -159,8 +158,6 @@ void mayor()
 // Función que encuentra la media de los elementos en la lista enlazada
 void media()
 {
-    int a[10];
-    int i;
     struct nodo* temporal;
   
     // Si la lista está vacía
