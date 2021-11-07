@@ -9,7 +9,6 @@ typedef struct snodo {
 typedef tnodo *tpuntero;
 void insertaralprincipio(tpuntero *cabeza, int dato);
 void imprimirlista(tpuntero cabeza);
-
 int main() {
 	tpuntero cabeza;
 	int e;
