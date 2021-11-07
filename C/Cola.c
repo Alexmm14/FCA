@@ -1,12 +1,15 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
+
 struct nodo {
     int info;
     struct nodo *sig;
 };
+
 struct nodo *raiz=NULL;
 struct nodo *fondo=NULL;
+
 void insertar(int x)
 {
     struct nodo *nuevo;
@@ -25,27 +28,6 @@ void insertar(int x)
     }
 }
 
-int extraer()
-{
-    if (!vacia())
-    {
-        int informacion = raiz->info;
-        struct nodo *bor = raiz;
-        if (raiz == fondo)
-        {
-            raiz = NULL;
-            fondo = NULL;
-        }
-        else
-        {
-            raiz = raiz->sig;
-        }
-        free(bor);
-        return informacion;
-    }
-    else
-        return -1;
-}
 void imprimir()
 {
     struct nodo *reco = raiz;
@@ -57,26 +39,13 @@ void imprimir()
     }
     printf("\n");
 }
-void liberar()
-{
-    struct nodo *reco = raiz;
-    struct nodo *bor;
-    while (reco != NULL)
-    {
-        bor = reco;
-        reco = reco->sig;
-        free(bor);
-    }
-}
-void main()
+
+int main()
 {
     insertar(5);
     insertar(10);
     insertar(50);
     imprimir();
-    printf("Extraemos uno de la cola: %i\n", extraer());
-    imprimir();
-    liberar();
     getch();
     return 0;
 }
