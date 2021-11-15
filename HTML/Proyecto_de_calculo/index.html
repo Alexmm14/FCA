@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de ventas</title>
+</head>
+    <script type="text/javascript">
+        function punto_equilibrio()
+        {
+            var costo_fijo=document.getElementById("costo_fijo_01").value;
+            var precio_unitario=document.getElementById("precio_unitario_01").value;
+            var costo_variable_unitario=document.getElementById("costo_variable_unitario_01").value;
+            var costo_variable=parseFloat(precio_unitario)*parseFloat(costo_variable_unitario);
+            var var_01= parseFloat(precio_unitario)-parseFloat(costo_variable); 
+            var var_02=parseFloat(costo_fijo)/parseFloat(var_01);
+            var var_03=parseInt(var_02);
+            alert("El punto de equilibrio se alcanza vendidendo "+var_03+" prouctos");
+        }
+    </script>
+
+    <script type="text/javascript">
+        function utilidad_bruta()
+        {
+            var precio=document.getElementById("precio_02").value;
+            var unidades_vendidas=document.getElementById("unidades_vendidas_01").value;
+            var utilidad_bruta= parseFloat(precio)*parseInt(unidades_vendidas);
+            alert("si se venden "+unidades_vendidas+" productos la utilidad bruta será de $"+utilidad_bruta);
+        }
+    </script>
+
+    <script type="text/javascript">
+        function utilidad_neta()
+        {
+            var costo_fijo=document.getElementById("costo_fijo_02").value;
+            var precio_unitario=document.getElementById("precio_03").value;
+            var costo_variable_unitario=document.getElementById("costo_variable_unitario_02").value;
+            var unidades_vendidas=document.getElementById("unidades_vendidas_02").value;
+            var venta=parseFloat(precio_unitario)*parseFloat(unidades_vendidas);
+            var costo_variable=costo_variable_unitario*precio_unitario*unidades_vendidas;
+            var costo=costo_variable+parseInt(costo_fijo);
+            var utilidad_neta=venta-parseInt(costo);
+            alert("La utilidad neta será de $"+utilidad_neta);
+        }
+    </script>
+
+
+<body bgcolor="grey">
+    <img src="fca.png" width="250" height="250" border="2" black align="left"/>
+    <img src="unam.png" width="250" height="250" border="2" black align="right"/>
+    <h1 align="center">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</h1>
+    <h2 align="center">FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN</h2>
+    <h2 align="center">CÁLCULO DIFERENCIAL E INTEGRAL</h2>
+    <h1 align="center">Vázquez González Cristian Martín</h1>
+    <h1 align="center">Grupo: 1396</h1>
+    <h2>Calculadora de ventas</h2>
+    <fieldset>
+        <legend>Punto de equilibrio</legend>
+        <label for="costo_fijo_01">Costo fijo $ </label>
+        <input id="costo_fijo_01" placeholder="100.00"/><br><br>
+        <label for="precio_unitario_01">Precio por unidad $ </label>
+        <input id="precio_unitario_01" placeholder="100.00"/><br><br>
+        <label for="costo_variable_unitario_01">Costo variable unitario $ </label>
+        <input id="costo_variable_unitario_01" placeholder="100.00"/><br><br>
+        <input type="button" id="boton" value="Punto de equilibrio" onclick="punto_equilibrio()">
+    </fieldset><br>
+
+    <fieldset>
+        <legend>Utilidad bruta</legend>
+        <label for="precio_02">Precio por unidad $ </label>
+        <input id="precio_02" placeholder="100.00"/><br><br>
+        <label for="unidades_vendidas_01">Unidades vendidas </label>
+        <input id="unidades_vendidas_01" placeholder="100"/><br><br>
+        <input type="button" id="boton" value="Utilidad bruta" onclick="utilidad_bruta()">
+    </fieldset><br>
+    
+    <fieldset>
+        <legend>Utilidad neta</legend>
+        <label for="costo_fijo_02">Costo fijo $ </label>
+        <input id="costo_fijo_02" placeholder="100.00"/><br><br>
+        <label for="precio_03">Precio por unidad $ </label>
+        <input id="precio_03" placeholder="100.00"/><br><br>
+        <label for="costo_variable_unitario_02">Costo variable unitario $ </label>
+        <input id="costo_variable_unitario_02" placeholder="100.00"/><br><br>
+        <label for="unidades_vendidas_02">Unidades vendidas </label>
+        <input id="unidades_vendidas_02" placeholder="100"/><br><br>
+        <input type="button" id="boton" value="Utilidad neta" onclick="utilidad_neta()">
+    </fieldset><br>
+</body>
+</html>
