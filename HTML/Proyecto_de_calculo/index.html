@@ -1,14 +1,46 @@
+<!--
+                        UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO
+                        FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN
+                        Autro: Cristian Martín Vázquez González
+
+    El siguiente código tiene como fin crear una calculadora de ventas con tres operaciones solicitando datos al usuario
+    -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Calculadora de ventas</title>
 </head>
+<!--
+    INICIO DE LA PARTE CON JAVASCRIPT
+    Es importante decir que esta no es la mejor manera de juntar códio HTML con javascript.
+
+    La formula que siguen todos los scripts es:
+    U(x)=V-C
+    U(x)=(P(x))-(CF+CV)
+    U(x)=(P(x))-(CF+(P(x)*CVU))
+
+    Donde:
+    x=Productos vendidos
+    U(x)=Utilidad neta
+    V=Ventas totales
+    C=Costos totales
+    P(x)=Precio unitario
+    CF=Costos Fijos
+    CV=Costos variables
+    CVU=Costos variables unitarios
+
+    El primer script calcula el punto de equilibrio de la siguiente forma:
+    0=V-C La utilidad neta debe ser cero para que las ventas sean redituables
+    0=(P(x))-(CF+(P(x)*CVU))
+-->
     <script type="text/javascript">
         function punto_equilibrio()
         {
+            //En todos los scripts las variables con document.get... son datos que digita el usuario
             var costo_fijo=document.getElementById("costo_fijo_01").value;
             var precio_unitario=document.getElementById("precio_unitario_01").value;
             var costo_variable_unitario=document.getElementById("costo_variable_unitario_01").value;
+            //En todos los cripst las variables sencillas son datos calculados
             var costo_variable=parseFloat(precio_unitario)*parseFloat(costo_variable_unitario);
             var var_01= parseFloat(precio_unitario)-parseFloat(costo_variable); 
             var var_02=parseFloat(costo_fijo)/parseFloat(var_01);
@@ -16,7 +48,10 @@
             alert("El punto de equilibrio se alcanza vendidendo "+var_03+" prouctos");
         }
     </script>
-
+    <!--
+        El segundo script clcula la utilidad bruta de la siguiente forma:
+        V=P(x)
+    -->
     <script type="text/javascript">
         function utilidad_bruta()
         {
@@ -26,8 +61,11 @@
             alert("si se venden "+unidades_vendidas+" productos la utilidad bruta será de $"+utilidad_bruta);
         }
     </script>
-
-    <script type="text/javascript">
+    <!--
+        El tercer script calcula la utilidad neta de la siguiente forma:
+        U(x)=(P(x))-(CF+(P(x)*CVU))
+    -->
+     <script type="text/javascript">
         function utilidad_neta()
         {
             var costo_fijo=document.getElementById("costo_fijo_02").value;
@@ -40,11 +78,12 @@
             var utilidad_neta=venta-parseInt(costo);
             alert("La utilidad neta será de $"+utilidad_neta);
         }
-    </script>
-
-
-<body bgcolor="grey">
-    <img src="fca.png" width="250" height="250" border="2" black align="left"/>
+   </script>
+    <!--FIN DE LA PARTE CON JAVASCRIPT-->
+    <!--INICIO DE LA PARTE CON HTML Y CSS-->
+    <!--Carátula-->
+    <body bgcolor="grey">
+        <img src="fca.png" width="250" height="250" border="2" black align="left"/>
     <img src="unam.png" width="250" height="250" border="2" black align="right"/>
     <h1 align="center">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</h1>
     <h2 align="center">FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN</h2>
@@ -52,6 +91,7 @@
     <h1 align="center">Vázquez González Cristian Martín</h1>
     <h1 align="center">Grupo: 1396</h1>
     <h2>Calculadora de ventas</h2>
+    <!--Campo de captura para el punto de equilibrio-->
     <fieldset>
         <legend>Punto de equilibrio</legend>
         <label for="costo_fijo_01">Costo fijo $ </label>
@@ -60,19 +100,23 @@
         <input id="precio_unitario_01" placeholder="100.00"/><br><br>
         <label for="costo_variable_unitario_01">Costo variable unitario $ </label>
         <input id="costo_variable_unitario_01" placeholder="100.00"/><br><br>
+        <!--El imput de tipo botón se personaliza para llamar a la función de punto_equilibrio() con onclick-->
         <input type="button" id="boton" value="Punto de equilibrio" onclick="punto_equilibrio()">
     </fieldset><br>
 
+    <!--Campo de captura para la utilidad bruta-->
     <fieldset>
         <legend>Utilidad bruta</legend>
         <label for="precio_02">Precio por unidad $ </label>
         <input id="precio_02" placeholder="100.00"/><br><br>
         <label for="unidades_vendidas_01">Unidades vendidas </label>
         <input id="unidades_vendidas_01" placeholder="100"/><br><br>
+        <!--El imput de tipo botón se personaliza para llamar a la función de utilidad_bruta() con onclick-->
         <input type="button" id="boton" value="Utilidad bruta" onclick="utilidad_bruta()">
     </fieldset><br>
     
-    <fieldset>
+    <!--Campo de captura para la utilidad neta-->
+      <fieldset>
         <legend>Utilidad neta</legend>
         <label for="costo_fijo_02">Costo fijo $ </label>
         <input id="costo_fijo_02" placeholder="100.00"/><br><br>
@@ -82,6 +126,7 @@
         <input id="costo_variable_unitario_02" placeholder="100.00"/><br><br>
         <label for="unidades_vendidas_02">Unidades vendidas </label>
         <input id="unidades_vendidas_02" placeholder="100"/><br><br>
+        <!--El imput de tipo botón se personaliza para llamar a la función de utilidad_neta() con onclick-->
         <input type="button" id="boton" value="Utilidad neta" onclick="utilidad_neta()">
     </fieldset><br>
 </body>
