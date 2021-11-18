@@ -2,16 +2,18 @@
                         UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO
                         FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN
                                         Autores 
+                        Castillo García Uriel
                         Ortíz López Hugo Enrique
                         Ruíz Maravilla Joaquín
                         Vázquez González Cristian Martín
 
-    El siguiente código tiene como fin crear una calculadora de ventas con tres operaciones solicitando datos al usuario
+    El siguiente código tiene como fin crear una calculadora de ventas con tres operaciones solicitando datos al usuario.
     -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Calculadora de ventas</title>
+    <link rel="shortcut icon" href="unam.png" type="image/png"/>
 </head>
 <!--
     INICIO DE LA PARTE CON JAVASCRIPT
@@ -85,19 +87,18 @@
     <!--FIN DE LA PARTE CON JAVASCRIPT-->
     <!--INICIO DE LA PARTE CON HTML Y CSS-->
     <!--Carátula-->
-    <body bgcolor="grey">
-        <img src="fca.png" width="250" height="250" border="2" black align="left"/>
-    <img src="unam.png" width="250" height="250" border="2" black align="right"/>
-    <h1 align="center">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</h1>
-    <h2 align="center">FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN</h2>
-    <h2 align="center">CÁLCULO DIFERENCIAL E INTEGRAL</h2>
-    <h2 align="center">Ortíz López Hugo Enrique</h2>
-    <h2 align="center">Ruíz Maravilla Joaquín</h2>
-    <h2 align="center">Vázquez González Cristian Martín</h2>
-    <h2 align="center">Grupo: 1396</h2>
-    <h2>Calculadora de ventas</h2>
+    <body background="fondo.gif" width ="1000000"><span style="color:white">
+    <img src="fca.png" width="250" height="250" align="left"/>
+    <img src="unam.png" width="250" height="250" align="right"/>
+    <h2 align="center">UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</h2>
+    <h3 align="center">FACULTAD DE CONTADURÍA Y ADMINISTRACIÓN</h3>
+    <h3 align="center">Castillo García Uriel</h3>
+    <h3 align="center">Ortíz López Hugo Enrique</h3>
+    <h3 align="center">Ruíz Maravilla Joaquín</h3>
+    <h3 align="center">Vázquez González Cristian Martín</h3><br>
+    
     <!--Campo de captura para el punto de equilibrio-->
-    <fieldset>
+    <fieldset style="border: 1px solid white">
         <legend>Punto de equilibrio</legend>
         <label for="costo_fijo_01">Costo fijo $ </label>
         <input id="costo_fijo_01" placeholder="100.00"/><br><br>
@@ -110,7 +111,7 @@
     </fieldset><br>
 
     <!--Campo de captura para la utilidad bruta-->
-    <fieldset>
+    <fieldset style="border: 1px solid white">
         <legend>Utilidad bruta</legend>
         <label for="precio_02">Precio por unidad $ </label>
         <input id="precio_02" placeholder="100.00"/><br><br>
@@ -121,7 +122,7 @@
     </fieldset><br>
     
     <!--Campo de captura para la utilidad neta-->
-      <fieldset>
+      <fieldset style="border: 1px solid white">
         <legend>Utilidad neta</legend>
         <label for="costo_fijo_02">Costo fijo $ </label>
         <input id="costo_fijo_02" placeholder="100.00"/><br><br>
@@ -133,6 +134,9 @@
         <input id="unidades_vendidas_02" placeholder="100"/><br><br>
         <!--El imput de tipo botón se personaliza para llamar a la función de utilidad_neta() con onclick-->
         <input type="button" id="boton" value="Utilidad neta" onclick="utilidad_neta()">
-    </fieldset><br>
-</body>
+      </fieldset><br>
+    <a target="_blank" href="https://github.com/marvaz101/FCA/tree/master/HTML/Proyecto_de_calculo">
+    <img src="github.png" width="220" align="center" target=_blank"/></a>
+    <h2>Repositorio de GitHub</h2>
+     </body>
 </html>
