@@ -153,7 +153,8 @@ if [ "$?" -eq 0 ]; then
 	sed -i "s/database_name_here/${EQUIPO}/g" /var/www/html/"${EQUIPO}"/wp-config.php
 	sed -i "s/username_here/${USER}/g" /var/www/html/"${EQUIPO}"/wp-config.php
 	sed -i "s/password_here/${PASS}/g" /var/www/html/"${EQUIPO}"/wp-config.php
-rm vhost2
+cd
+rm vhost2.txt
 rm "${EQUIPO}".conf
 echo "La instalación de WordPress en el servidor LAMP ha finalizado con éxito."
 else
