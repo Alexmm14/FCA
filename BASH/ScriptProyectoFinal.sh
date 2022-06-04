@@ -3,7 +3,7 @@
 #------------------Instalación LAMP--------------------------
 
 #INSTALL_YUM='/usr/bin/yum'
-#--------- Obtener version de SO
+#---------Obtención del tipo de sistema operatio
 if [ -f /etc/redhat-release ]; then
 	#---------Instalación de repositorios para PHP 7.4
 	/usr/bin/yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -69,13 +69,13 @@ fi
 #--------------------Configuración vhost-----------------------------------
 
 
-echo "Escribe el nombre del proyecto o equipo..."
+echo "Digite el nombre de su equipo:"
 read EQUIPO
 
-echo "Escribe el correo del usuario del proyecto o equipo..."
+echo "Digite un coreo electronico:"
 read MAIL
 
-echo "Escribe el dominio del proyecto o equipo..."
+echo "Digite el dominio de wordpress:"
 read DOMAIN
 
 if [ -f /etc/redhat-release ]; then
@@ -109,10 +109,10 @@ fi
 PROJECT_DIR=$(pwd)
 
 #------------ Obtener los datos para la BD
-echo "Escribe el nombre del usuario para la BD..."
+echo "Digite el usuario nuevo para la base de datos:"
 read USER
 
-echo "Escribe una contraseña para este usuario..."
+echo "Digite una contraseña para el nuevo usuario:"
 read PASS
 
 #------------ Descarga de Wordpress
@@ -134,7 +134,7 @@ cp -fr /var/www/html/"${EQUIPO}"/wp-config-sample.php /var/www/html/"${EQUIPO}"/
 
 #--------------Configuración usuario BD------------------------------------------------------------
 
-echo "Escribe la contraseña del usuario root para la BD..."
+echo "Digite la contraseña del usuario root para la base de datos:"
 read PASSROOT
 
 echo "CREATE DATABASE ${EQUIPO};" | mysql -u root -p"'${PASSROOT}'"
@@ -153,7 +153,9 @@ if [ "$?" -eq 0 ]; then
 	sed -i "s/database_name_here/${EQUIPO}/g" /var/www/html/"${EQUIPO}"/wp-config.php
 	sed -i "s/username_here/${USER}/g" /var/www/html/"${EQUIPO}"/wp-config.php
 	sed -i "s/password_here/${PASS}/g" /var/www/html/"${EQUIPO}"/wp-config.php
-echo "WordPress se ha instaldo con éxito en tu servidor LAMP"
+rm vhost2
+rm "${EQUIPO}".conf
+echo "La instalación de WordPress en el servidor LAMP ha finalizado con éxito."
 else
-	echo "Algo salio mal al crear la BD"
+	echo "Algo salio mal al crear la Base de datos."
 fi
