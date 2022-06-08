@@ -93,8 +93,11 @@ echo "Digite la contraseña del usuario root para la base de datos:"
 read PASSROOT
 
 echo "CREATE DATABASE ${EQUIPO};" | mysql -u root -p"'${PASSROOT}'"
+
 echo "CREATE USER '${USER}'@'%' IDENTIFIED BY '${PASS}';" | mysql -u root -p"'${PASSROOT}'"
+
 echo "GRANT ALL PRIVILEGES ON ${EQUIPO}.* to '${USER}'@'%';" | mysql -u root -p"'${PASSROOT}'"
+
 echo "FLUSH PRIVILEGES;" | mysql -u root -p"'${PASSROOT}'"
 
 #------------ Validación de la BD para configurar Wordpress
