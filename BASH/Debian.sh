@@ -3,10 +3,9 @@
 #--------------------Instalación LAMP-----------------------------------
 #INSTALL_YUM='/usr/bin/yum'
 #---------Actualización de paquetes
-/usr/bin/apt -y apt-get
-/usr/bin/apt -y update
+/usr/bin/apt -y update      
 /usr/bin/apt -y upgrade
-      
+
 #--------- Instalación de wget
 /usr/bin/apt -y install wget
     
@@ -40,6 +39,8 @@ read EMAIL
 
 echo "Digite el dominio de wordpress:"
 read DOMAIN
+
+/usr/bin/systemctl reload apache2
 
 #------- Asignación de LOGS
 LOGS='\/var\/log\/apache2'
