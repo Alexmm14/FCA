@@ -111,8 +111,6 @@ if [ "$?" -eq 0 ]; then
 cd
 rm vhost2.txt
 rm "${EQUIPO}".conf
-echo" "
-echo" "
 echo "La instalación de WordPress en el servidor LAMP ha finalizado con éxito."
 else
 	echo "Algo salio mal al crear la Base de datos."
