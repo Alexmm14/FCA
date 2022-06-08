@@ -1,7 +1,9 @@
 #!/usr/bin/bash
 
 #--------------------Instalación LAMP-----------------------------------
+#INSTALL_YUM='/usr/bin/yum'
 #---------Actualización de paquetes
+/usr/bin/apt -y apt-get
 /usr/bin/apt -y update
 /usr/bin/apt -y upgrade
       

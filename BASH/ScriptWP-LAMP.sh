@@ -3,7 +3,7 @@
 #------------------Instalación LAMP--------------------------
 
 #INSTALL_YUM='/usr/bin/yum'
-#---------Obtención del tipo de sistema operatio
+#---------Obtención del tipo de sistema operativo
 if [ -f /etc/redhat-release ]; then
 	#---------Instalación de repositorios para PHP 7.4
 	/usr/bin/yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
