@@ -14,13 +14,13 @@ Y
 Y
 
 FIRST PART:
-Equipo
-Correo
-.com
+Team
+Mail
+Dom.com
 
-SSECOND PART:
-Usuario
-Contra
+SECOND PART:
+User
+Password
 
 FINAL PART:
-Contraroot
+RootPassword
