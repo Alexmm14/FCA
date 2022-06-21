@@ -16,6 +16,8 @@ class ViewControllerDetalleComida: UIViewController {
     //Referencias
     //Métodos precargados
     //métodos
+    //investigar que es un protocolo en orientado a objetos
+    //
     
     
 
