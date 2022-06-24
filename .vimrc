@@ -12,5 +12,5 @@ set nobackup
 set incsearch
 set ignorecase
 set cursorline
-set clipboard=unnamed
+set clipboard=unnamedplus
 set encoding=utf-8
