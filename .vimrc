@@ -14,3 +14,15 @@ set ignorecase
 set cursorline
 set clipboard=unnamedplus
 set encoding=utf-8
+set colorcolumn=150
+set termguicolors
+
+highlight Colocolum ctermbg=0 guibg=lightgrey
+
+call plug#begin('~/local/share/vim/plugged')
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+set background=dark
+let g:gruvbox_cotrast_dark="hard"
+colorscheme gruvbox
